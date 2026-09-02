@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./project.css?v=20260902-connection2" />
     <link rel="stylesheet" href="./smarthue.css?v=20260902-connection2" />
+    <link rel="stylesheet" href="../tokens.css?v=20260902-colors1" />
   </head>
   <body class="smarthue-page">
     <div class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
@@ -48,22 +49,44 @@
           <p class="section-number">03 · Before and after</p>
           <h2>From a device list to direct connection</h2>
           <p class="section-intro">The redesigned journey removed the device list after discovery. For Bridge, the user moves directly to the physical action required to complete connection.</p>
-          <div class="flow-comparison">
-            <figure class="screen-figure">
-              <div class="screen-stage screen-sequence">
-                <div class="sequence-screen"><span>1 · Select a device</span><img src="./assets/smarthue/old-bridge-device-list.png" alt="Previous SmartHue Bridge device list showing twelve found devices with a Connect action for each Bridge." /></div>
-                <i>→</i>
-                <div class="sequence-screen"><span>2 · Press the button</span><img src="./assets/smarthue/old-bridge-press-button.png" alt="Previous SmartHue Bridge flow instructing the user to press the physical button after tapping Connect." /></div>
+          <div class="flow-comparison before-after-comparison">
+            <figure class="before-after-column before-after-column--before">
+              <div class="before-after-stage before-after-stage--before">
+                <div class="before-after-screen">
+                  <span>1 – Select a device</span>
+                  <img src="./assets/smarthue/old-bridge-device-list.png" alt="Previous SmartHue Bridge device list showing twelve found devices with a Connect action for each Bridge." />
+                </div>
+                <div class="before-after-screen">
+                  <span>2 – Press the button</span>
+                  <img src="./assets/smarthue/old-bridge-press-button.png" alt="Previous SmartHue Bridge flow instructing the user to press the physical button after tapping Connect." />
+                </div>
               </div>
-              <figcaption><span>Before</span><strong>Users tapped Connect, then still pressed the Bridge button.</strong></figcaption>
+              <figcaption class="before-after-caption">
+                <span class="before-after-label">Before</span>
+                <strong>Users tapped Connect, then still pressed the Bridge button.</strong>
+              </figcaption>
             </figure>
-            <div class="comparison-arrow" aria-hidden="true">→</div>
-            <figure class="screen-figure">
-              <div class="screen-stage"><img src="./assets/smarthue/new-bridge-press-button.png" alt="Redesigned SmartHue Bridge flow instructing the user to press the physical button on the Bridge after it is found." /></div>
-              <figcaption><span>After</span><strong>Discovery moves directly to pressing the Bridge button.</strong></figcaption>
+
+            <div class="before-after-arrow" aria-hidden="true">
+              <img src="./assets/smarthue/arrow-forward.svg" alt="" />
+            </div>
+
+            <figure class="before-after-column before-after-column--after">
+              <div class="before-after-stage before-after-stage--after">
+                <div class="before-after-screen">
+                  <span>Press the button</span>
+                  <img src="./assets/smarthue/new-bridge-press-button.png" alt="Redesigned SmartHue Bridge flow instructing the user to press the physical button on the Bridge after it is found." />
+                </div>
+              </div>
+              <figcaption class="before-after-caption">
+                <span class="before-after-label">After</span>
+                <div class="before-after-caption-body">
+                  <strong>Discovery moves directly to pressing the Bridge button.</strong>
+                  <p class="before-after-outcome">Manual Connect step removed · Physical Bridge action retained</p>
+                </div>
+              </figcaption>
             </figure>
           </div>
-          <p class="comparison-label">Manual Connect step removed · Physical Bridge action retained</p>
         </section>
 
         <section class="case-section automation-section reveal">
@@ -72,21 +95,19 @@
             <h2>Automation without losing visibility</h2>
             <p>For Hue BLE Light, the interface shows the model currently being connected, such as <code>Hue color lamp</code>. When more than one light is found, SmartHue connects lights one at a time in detection order, avoiding repeated manual selection while keeping progress visible.</p>
           </div>
-          <figure class="single-screen"><div class="screen-stage"><img src="./assets/smarthue/ble-connecting.png" alt="Redesigned SmartHue BLE flow showing automatic connection to a device named Hue color lamp." /></div><figcaption>Automatic connection with visible device-model feedback.</figcaption></figure>
-        </section>
-
-        <section class="case-section reveal">
-          <p class="section-number">05 · Recovery states</p>
-          <h2>A clear path when connection does not complete</h2>
-          <div class="copy-column"><p>The flow includes clear recovery paths for no device found and connection timeout, both with a <code>Try Again</code> action.</p></div>
-          <div class="recovery-strip">
-            <figure><img src="./assets/smarthue/ble-no-light.png" alt="SmartHue recovery screen for no light found with a Try Again action." /><figcaption>No Light Found</figcaption></figure>
-            <figure><img src="./assets/smarthue/ble-timeout.png" alt="SmartHue recovery screen for connection timeout with a Try Again action." /><figcaption>Connection Timed Out</figcaption></figure>
-          </div>
+          <figure class="single-screen">
+            <div class="screen-stage">
+              <div class="connecting-feedback-screen">
+                <span>Connecting to device</span>
+                <img src="./assets/smarthue/ble-connecting-feedback.png" alt="SmartHue automatic connection screen for Hue color lamp." />
+              </div>
+            </div>
+            <figcaption>Automatic connection with visible device-model feedback.</figcaption>
+          </figure>
         </section>
 
         <section class="case-section outcome-section reveal">
-          <p class="section-number">06 · Outcome</p>
+          <p class="section-number">05 · Outcome</p>
           <h2>A more successful, faster connection journey</h2>
           <div class="copy-column"><p>The redesigned flow removed the manual device-selection step. Team outcomes showed increased successful connections and reduced connection time, helping users reach their first connected light with less effort.</p></div>
           <div class="qualitative-outcomes">
@@ -97,16 +118,16 @@
 
         <section class="case-section reveal">
           <div class="closing-grid">
-            <div><p class="section-number">07 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul><li>Keep the user in the connection journey until every detected device has completed connection, then take them to light controls.</li><li>Add a factory-reset recovery state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
+            <div><p class="section-number">06 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul><li>Keep the user in the connection journey until every detected device has completed connection, then take them to light controls.</li><li>Add a factory-reset recovery state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
             <aside class="future-note"><strong>Future proposal</strong><p>These directions are not shipped work or reported outcomes.</p></aside>
           </div>
         </section>
 
-        <section class="case-section reveal">
-          <p class="section-number">08 · Measurement plan</p>
-          <h2>What I’d monitor after launch</h2>
-          <ul class="monitoring-list"><li>Connection success rate</li><li>Discovery-to-connection conversion</li><li>Time to first successful connection</li><li>Multi-device completion rate</li><li>Recovery success rate</li><li>Breakdown by Bridge and Hue BLE Light</li></ul>
-        </section>
+        <aside class="case-limitation case-limitation--standalone reveal">
+          <strong>Limitation</strong>
+          <p>Because I did not have direct access to users, I could not verify why people dropped at the Connect button. The proposed explanation is therefore a hypothesis informed by funnel data, not a confirmed user insight.</p>
+          <p>To validate this, I would run a usability-testing session with employees who do not work on SmartHue if representative users cannot be recruited.</p>
+        </aside>
       </article>
 
       <footer class="article-footer reveal"><a href="../index.html#work"><span>Back</span>All projects</a><a href="./smarthue-home-room.html"><span>Next SmartHue case</span>Home prioritisation →</a></footer>

@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
-  --bg: #ffffff;
-  --paper: #fffefa;
-  --ink: #171715;
-  --muted: #77746c;
-  --line: rgba(23, 23, 21, 0.11);
-  --accent: #4d56d7;
+  --bg: var(--color-background-page, #ffffff);
+  --paper: var(--color-background-surface, #ffffff);
+  --ink: var(--color-text-primary, #0d0d0d);
+  --muted: var(--color-text-muted, #737373);
+  --line: var(--color-border-default, #e6e6e6);
+  --accent: var(--color-accent, #359dff);
   --shadow: 0 18px 55px rgba(34, 32, 24, 0.10);
 }
 
@@ -56,16 +56,16 @@ main { width: calc(100% - 40px); max-width: 520px; margin-inline: auto; padding:
 
 .eyebrow { font-weight: 600; margin: 0 0 16px; letter-spacing: -.01em; }
 h1 { margin: 0 0 25px; font-size: 27px; line-height: 1.18; letter-spacing: -.045em; font-weight: 560; }
-.intro-copy { margin: 0 0 16px; color: #484741; font-size: 16px; letter-spacing: -.018em; }
+.intro-copy { margin: 0 0 16px; color: var(--color-text-secondary); font-size: 16px; letter-spacing: -.018em; }
 .intro-copy.muted { color: var(--muted); }
 .inline-links { display: flex; gap: 18px; margin-top: 28px; font-size: 13px; font-weight: 500; }
 .inline-links a { border-bottom: 1px solid var(--line); padding-bottom: 2px; transition: color .2s, border-color .2s; }
 .inline-links a:hover { color: var(--accent); border-color: var(--accent); }
 
 .filter-bar { display: flex; gap: 0; margin-bottom: 32px; position: sticky; top: 18px; z-index: 10; width: 295px; max-width: 100%; padding: 4px; border: 0; border-radius: 999px; background: rgba(0,0,0,.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-.filter { border: 0; outline: 0; background: transparent; color: #4d4d4d; border-radius: 999px; padding: 12px 14px; font-family: inherit; font-size: 16px; font-weight: 600; line-height: 20px; cursor: pointer; transition: background .2s ease; }
+.filter { border: 0; outline: 0; background: transparent; color: var(--color-neutral-600); border-radius: 999px; padding: 12px 14px; font-family: inherit; font-size: 16px; font-weight: 600; line-height: 20px; cursor: pointer; transition: background .2s ease; }
 .filter:hover { background: rgba(255,255,255,.5); }
-.filter.active { background: #fff; color: #4d4d4d; }
+.filter.active { background: var(--color-background-surface); color: var(--color-neutral-600); }
 
 .project-list { display: grid; gap: 56px; }
 .project-card { display: block; min-width: 0; cursor: pointer; transition: opacity .35s, transform .5s cubic-bezier(.2,.8,.2,1), filter .35s; outline: none; }

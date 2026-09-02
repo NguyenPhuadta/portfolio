@@ -1,0 +1,91 @@
+:root {
+  color-scheme: light;
+
+  --color-primary-50: #ebf4ff;
+  --color-primary-100: #d1e7ff;
+  --color-primary-200: #a8d1ff;
+  --color-primary-300: #7abaff;
+  --color-primary-400: #59abff;
+  --color-primary-500: #359dff;
+  --color-primary-600: #2b7fd9;
+  --color-primary-700: #1f62b3;
+  --color-primary-800: #15468c;
+  --color-primary-900: #0c2e66;
+  --color-primary-950: #061a40;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #292929;
+  --color-neutral-900: #1c1c1c;
+  --color-neutral-950: #0d0d0d;
+
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  --color-success-950: #022c22;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+  --color-error-950: #450a0a;
+
+  --color-background-page: #ffffff;
+  --color-background-surface: #ffffff;
+  --color-background-subtle: var(--color-neutral-50);
+  --color-background-muted: var(--color-neutral-100);
+  --color-text-primary: var(--color-neutral-950);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-muted: var(--color-neutral-500);
+  --color-border-default: var(--color-neutral-200);
+  --color-accent: var(--color-primary-500);
+  --color-accent-hover: var(--color-primary-600);
+  --color-link: var(--color-primary-700);
+  --color-focus: var(--color-primary-500);
+  --color-success-surface: var(--color-success-50);
+  --color-success-text: var(--color-success-600);
+  --color-warning-surface: var(--color-warning-50);
+  --color-warning-text: var(--color-warning-800);
+  --color-error-surface: var(--color-error-50);
+  --color-error-text: var(--color-error-700);
+
+  /* Compatibility aliases for the current static stylesheets. */
+  --bg: var(--color-background-page);
+  --paper: var(--color-background-surface);
+  --ink: var(--color-text-primary);
+  --muted: var(--color-text-muted);
+  --line: var(--color-border-default);
+  --accent: var(--color-accent);
+  --soft: var(--color-primary-50);
+}

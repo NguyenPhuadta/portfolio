@@ -1,5 +1,22 @@
 # Quy tắc xây dựng nội dung case study
 
+## Quy tắc làm việc với codebase
+
+Khi thực hiện các nhiệm vụ liên quan đến lập kế hoạch, sửa lỗi hoặc phát triển code trong repository này, phải tuân thủ các nguyên tắc sau:
+
+1. Trước khi đề xuất giải pháp, phải khảo sát kỹ codebase và phạm vi liên quan: cấu trúc dự án, luồng hiện tại, dependency, convention, test, các thay đổi đang có và vùng có nguy cơ bị ảnh hưởng. Không kết luận hoặc lên kế hoạch chỉ dựa trên phỏng đoán.
+2. Mặc định phải trình bày plan cụ thể để người dùng xem xét và duyệt trước khi chỉnh sửa code. Chỉ được bỏ qua bước duyệt plan với thay đổi cực nhỏ, rõ ràng và an toàn, thường giới hạn trong 1–2 dòng.
+3. Plan phải nêu rõ vấn đề đã xác minh, nguyên nhân hoặc giả thuyết còn cần kiểm chứng, file/vùng dự kiến thay đổi, cách triển khai và cách kiểm tra kết quả.
+4. Không bắt đầu code khi plan chưa được người dùng duyệt, trừ ngoại lệ 1–2 dòng nêu trên. Nếu trong quá trình triển khai phát hiện phạm vi hoặc hướng giải quyết thay đổi đáng kể so với plan đã duyệt, phải dừng và xin duyệt lại.
+5. Nếu thiếu thông tin, gặp dữ kiện mâu thuẫn, không xác định chắc yêu cầu, phát hiện rủi ro có thể làm sai phạm vi, hoặc cần quyết định sản phẩm/thiết kế, phải dừng lại ngay và hỏi người dùng. Không tự suy đoán để tiếp tục.
+6. Nếu nhiệm vụ cần UI mới hoặc chưa có đủ đặc tả hình ảnh, phải dừng và đề nghị người dùng cung cấp hoặc vẽ/chốt UI trước khi code; ngoại lệ là asset hình ảnh còn thiếu trong phần detail của case study, khi đó dùng placeholder theo quy tắc 12.
+7. Sau khi code, phải kiểm tra thay đổi tương xứng với mức độ rủi ro (ví dụ: test, lint, type-check, build hoặc kiểm tra thủ công phù hợp) và báo rõ những gì đã kiểm tra, phần nào chưa thể kiểm tra và rủi ro còn lại.
+8. Mọi section so sánh `Before / After` phải dùng form đã được duyệt trong Figma node `1123:27`: hai card visual bo góc, mũi tên chuyển đổi ở giữa, nhãn và mô tả căn giữa bên dưới, cùng outcome pill đặt dưới phía `After` khi có. Không đưa nền trắng tổng của frame Figma vào UI; đó chỉ là canvas hỗ trợ thiết kế.
+9. Mọi màu UI mới phải dùng primitive hoặc semantic token trong `tokens.css`, dựa trên color system Figma node `1124:332`. Chỉ được hardcode màu khi đó là artwork, gradient minh họa hoặc màu đặc thù của project và không đóng vai trò token giao diện.
+10. Workflow mặc định là `Portfolio Fast`: chỉ khảo sát target page, stylesheet liên quan và dependency dùng chung trực tiếp; plan ngắn 3–5 ý; triển khai tập trung vào nội dung và visual cần thiết để hoàn thiện portfolio. Không audit toàn repository hoặc xử lý tech debt ngoài phạm vi, trừ lỗi critical, lỗi chặn triển khai hoặc thay đổi tác động tới shared layer.
+11. Không thực hiện QA UI/visual sau khi code; người dùng sẽ tự kiểm tra giao diện. Chỉ chạy kiểm tra kỹ thuật tối thiểu khi phù hợp, như syntax, link/asset tồn tại hoặc lỗi build rõ ràng. Chỉ QA toàn bộ route khi người dùng yêu cầu rõ.
+12. Từ case study tiếp theo, ở phần detail không được tự tạo, tự vẽ hoặc tự dựng mockup/minh họa để thay thế asset chưa có. Phải dùng một block placeholder màu xám, bên trong ghi rõ `Content image placeholder` và mô tả ngắn loại hình ảnh cần bổ sung. Không áp dụng hồi tố cho các case đã triển khai, trừ khi người dùng yêu cầu.
+
 Khi hỗ trợ lên kế hoạch hoặc viết nội dung cho các case study trong portfolio này, phải tuân thủ các nguyên tắc sau:
 
 1. Chỉ sử dụng những sự kiện, số liệu, vai trò, quy trình, quyết định, kết quả và ngữ cảnh mà người dùng đã cung cấp. Không tự suy đoán, phóng đại, điền khuyết hoặc tạo thêm thông tin để câu chuyện nghe hay hơn.
