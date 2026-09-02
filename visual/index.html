@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Selected visual and UI work by Nguyễn Hồng Phú.">
+  <title>Visual & UI Archive — Nguyễn Hồng Phú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./visual.css?v=20260901-jakarta1">
+  <link rel="stylesheet" href="./visual-overrides.css">
+</head>
+<body>
+  <header class="archive-header">
+    <a href="../index.html#work">← Portfolio</a>
+    <div class="archive-intro">
+      <p class="archive-kicker">Visual &amp; UI Archive</p>
+      <h1>A continuous collection of interfaces, systems, and visual experiments.</h1>
+      <p>Product UI, responsive web, growth assets, icons, and motion from selected professional and exploratory work.</p>
+    </div>
+  </header>
+
+  <nav class="archive-filters" aria-label="Filter visual work">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="product-ui">Product UI</button>
+    <button data-filter="web">Web &amp; SaaS</button>
+    <button data-filter="growth">Growth</button>
+    <button data-filter="motion">Motion &amp; Icons</button>
+  </nav>
+
+  <main class="archive-shell">
+    <div class="archive-feed" aria-live="polite"></div>
+    <div class="load-sentinel" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="archive-end" hidden>
+      <p>You’ve reached the end of the current archive.</p>
+      <a href="../index.html#work">Back to product case studies ↗</a>
+    </div>
+  </main>
+
+  <div class="archive-status" aria-hidden="true"><i></i><span>Visual archive</span><b>0 / 0</b></div>
+
+  <dialog class="lightbox">
+    <button class="lightbox-close" aria-label="Close preview">×</button>
+    <div class="lightbox-art"></div>
+    <div class="lightbox-meta"><div><span></span><h2></h2><p></p></div><b></b></div>
+  </dialog>
+
+  <script src="./visual.js"></script>
+</body>
+</html>

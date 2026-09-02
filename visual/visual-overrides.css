@@ -1,0 +1,11 @@
+@media (min-width: 651px) {
+  .archive-status {
+    right: 20px;
+    left: auto;
+    transform: none;
+  }
+}
+
+.motion-orb {
+  position: relative;
+}
