@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./project.css?v=20260902-home-room1" />
-    <link rel="stylesheet" href="./smarthue-home-room.css?v=20260902-home-room1" />
+    <link rel="stylesheet" href="./smarthue-home-room.css?v=20260903-home-room5" />
     <link rel="stylesheet" href="./case-standard.css?v=20260903-standard6" />
     <link rel="stylesheet" href="../tokens.css?v=20260902-colors1" />
   </head>
@@ -21,8 +21,7 @@
       <header class="article-header case-hero reveal">
         <p class="kicker">SmartHue · Engagement</p>
         <h1>When a low-frequency feature serves high-value users</h1>
-        <p class="dek">Using product data to bring everyday lighting controls forward—then learning that a low-frequency feature, Room, mattered deeply to high-retention users.</p>
-        <div class="case-status" role="note"><span>Draft case study</span><p>Exact metrics and visual assets are pending.</p></div>
+        <p class="dek">Using GA4 to prioritise frequent controls, then combining test and cohort data to retain Quick Mode while restoring Room for high-retention users.</p>
         <dl class="scope-list">
           <div><dt>Role</dt><dd>Product decision, UI flow and handoff</dd></div>
           <div><dt>Framework phase</dt><dd>HEART · Engagement</dd></div>
@@ -35,13 +34,13 @@
           <p class="section-number">01 · The first signal</p>
           <h2>Home was not prioritising everyday behaviour</h2>
           <div class="copy-column">
-            <p>Within the Engagement phase of HEART, changing colour was the most-used action. App Store feedback also pointed to a need to change the colour of several lights at once.</p>
+            <p>GA4 data from the original Home showed that changing colour was the most-used light-control action—ahead of turning lights on or off and adjusting brightness. App Store feedback also pointed to a need to change the colour of several lights at once.</p>
             <p>Room, meanwhile, was visible directly on Home but was created and opened less often.</p>
           </div>
           <div class="evidence-grid">
-            <figure class="asset-placeholder required" role="img" aria-label="Product analytics comparing engagement with colour change and Room actions.">
-              <div><strong>Content image placeholder</strong><span>Redacted comparison of colour-change and Room actions.</span></div>
-              <figcaption><span>Required analytics asset · Pending</span><strong>Behaviour evidence</strong><p>Redacted comparison of colour-change and Room actions. Exact values remain placeholders.</p></figcaption>
+            <figure class="asset-placeholder required" role="img" aria-label="Original Home analytics comparing colour, on and off, and brightness controls.">
+              <div><strong>Content image placeholder</strong><span>Redacted GA4 breakdown of colour, on/off and brightness actions on the original Home.</span></div>
+              <figcaption><span>Source: GA4</span><strong>Original Home behaviour</strong><p>Colour adjustment was the most-used light-control action.</p></figcaption>
             </figure>
             <figure class="asset-placeholder optional" role="img" aria-label="App Store feedback requesting a way to change the colour of multiple lights at once.">
               <div><strong>Content image placeholder</strong><span>Redacted App Store feedback about changing several lights’ colour together.</span></div>
@@ -57,61 +56,74 @@
             <p>Quick Mode was added so users could change the colour of all lights at once. Room was moved into More options on Home, keeping it available without giving it equal priority to frequent controls.</p>
           </div>
           <div class="decision-note"><strong>Tested change</strong><span>Room remained available inside More options—it was not removed.</span></div>
-          <figure class="asset-placeholder required wide" role="img" aria-label="Before-and-after SmartHue Home screens showing Room moved from the main view into More options.">
-            <div class="case-comparison-placeholder">
-              <div class="comparison-card"><div class="comparison-card__image">Content image placeholder</div><span class="comparison-card__label">Before</span><span class="comparison-card__description">Room visible directly on Home.</span></div>
-              <div class="comparison-arrow" aria-hidden="true">→</div>
-              <div class="comparison-card"><div class="comparison-card__image">Content image placeholder</div><span class="comparison-card__label">Test variant</span><span class="comparison-card__description">Room inside More options.</span><span class="comparison-outcome">Room remained available</span></div>
-            </div>
-            <figcaption><span>Required UI asset · Pending</span><strong>Home prioritisation decision</strong><p>Same-scale Home comparison: Room visible directly versus Room inside More options.</p></figcaption>
-          </figure>
-          <figure class="asset-placeholder required wide" role="img" aria-label="SmartHue Quick Mode for changing the colour of all lights at once.">
-            <div><strong>Content image placeholder</strong><span>Entry to Quick Mode and changing colour for all lights together.</span></div>
-            <figcaption><span>Required UI asset · Pending</span><strong>Quick Mode flow</strong><p>Entry to Quick Mode and changing colour for all lights together.</p></figcaption>
-          </figure>
-        </section>
-
-        <section class="case-section split-section reveal">
-          <div>
-            <p class="section-number">03 · Clear system feedback</p>
-            <h2>Make light states easier to understand</h2>
-            <p>The interface makes light error states explicit, based on the states and requirements defined with Engineering. This gives the product a clearer implementation model while helping users understand what is happening with a light.</p>
+          <div class="home-comparison" aria-label="Original and test versions of the SmartHue Home screen">
+            <figure class="home-comparison__column">
+              <div class="home-comparison__stage home-comparison__stage--original">
+                <div class="home-comparison__screen">
+                  <span>Home</span>
+                  <img src="./assets/smarthue/home-original.png" alt="Original SmartHue Home screen with Room visible in the primary navigation." />
+                </div>
+              </div>
+              <figcaption><span>Original version</span><strong>Room visible directly on Home.</strong></figcaption>
+            </figure>
+            <div class="home-comparison__arrow" aria-hidden="true"><img src="./assets/smarthue/arrow-forward.svg" alt="" /></div>
+            <figure class="home-comparison__column">
+              <div class="home-comparison__stage home-comparison__stage--test">
+                <div class="home-comparison__screen">
+                  <span>Home</span>
+                  <img src="./assets/smarthue/home-test.png" alt="Test SmartHue Home screen with Quick Mode available on Home." />
+                </div>
+                <div class="home-comparison__screen">
+                  <span>Change or add room</span>
+                  <img src="./assets/smarthue/home-test-more.png" alt="Test SmartHue Home screen with Room controls available inside More options." />
+                </div>
+              </div>
+              <figcaption><span>Test version</span><strong>Room remained available inside More options.</strong></figcaption>
+            </figure>
           </div>
-          <figure class="asset-placeholder required" role="img" aria-label="SmartHue interface communicating a light error state.">
-            <div><strong>Content image placeholder</strong><span>Final light error state and available action.</span></div>
-            <figcaption><span>Required UI asset · Pending</span><strong>Representative light error state</strong><p>Final state and available action will be inserted after confirmation.</p></figcaption>
-          </figure>
         </section>
 
         <section class="case-section reveal">
-          <p class="section-number">04 · What the test revealed</p>
-          <h2>Frequency did not equal value</h2>
+          <p class="section-number">03 · What the test revealed</p>
+          <h2>The test validated Quick Mode—but exposed the cost of hiding Room</h2>
           <div class="copy-column">
-            <p>After the test went live, user retention and pay rate on Home both declined. Further analysis showed that Room users had high retention: a feature used less often was still valuable to a loyal group of users.</p>
-            <p>Moving Room into a harder-to-find location had made Home less effective for those users.</p>
+            <p>During the new Home test, Quick Mode accounted for 64% of recorded Home actions—strong evidence that multi-light colour control addressed a real need. But overall retention fell from 12% to 9.6%, and Home pay rate also declined.</p>
+            <p>Further cohort analysis showed 19.4% W1 retention among new users who created a Room within their first 24 hours, compared with 9.4% among those who did not. Moving Room into a harder-to-find location had affected a smaller but more valuable user group.</p>
           </div>
-          <div class="metric-placeholders" aria-label="Metrics pending approved values">
-            <div><span>User retention</span><strong>Pending approved metric</strong><small>Declined in test</small></div>
-            <div><span>Home pay rate</span><strong>Pending approved metric</strong><small>Declined in test</small></div>
-            <div><span>Room-user retention</span><strong>Pending approved metric</strong><small>High-retention segment</small></div>
+          <div class="metric-placeholders" aria-label="Key GA4 metrics">
+            <div class="metric-card--primary"><span>Quick Mode usage</span><strong class="metric-value">64%</strong><small>Of recorded Home actions during the test</small><mark class="metric-decision">Retained in final Home</mark></div>
+            <div><span>Overall retention</span><strong class="metric-value">9.6%</strong><small>−19% vs 12% baseline</small></div>
+            <div><span>W1 retention · Room creators</span><strong class="metric-value">19.4%</strong><small>vs 9.4% without a Room in the first 24h</small></div>
           </div>
-          <figure class="asset-placeholder required wide" role="img" aria-label="Test results showing declining retention and Home pay rate, alongside analysis showing high retention among Room users.">
-            <div><strong>Content image placeholder</strong><span>Redacted one-month A/B-test results and segmented Room-user retention.</span></div>
-            <figcaption><span>Required analytics asset · Pending</span><strong>Test outcome and follow-up insight</strong><p>Redacted one-month A/B-test results followed by segmented Room-user retention.</p></figcaption>
+          <figure class="ga4-test-result" aria-labelledby="ga4-test-result-caption">
+            <div class="ga4-test-result__table-wrap">
+              <table>
+                <thead><tr><th scope="col">Variant</th><th scope="col">Retention rate</th><th scope="col">% difference from baseline</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row"><span class="ga4-test-result__variant"><i class="ga4-test-result__check" aria-hidden="true">✓</i><span>Baseline<small>235 users</small></span></span></th><td>12%</td><td>Baseline</td></tr>
+                  <tr><th scope="row"><span class="ga4-test-result__variant"><i class="ga4-test-result__check ga4-test-result__check--variant" aria-hidden="true">✓</i><span>Variant A<small>228 users</small></span></span></th><td>9.6%</td><td>-19%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <figcaption id="ga4-test-result-caption"><span>Source: GA4</span><strong>A/B retention result</strong><p>Overall retention declined from 12% in the baseline to 9.6% in the test variant.</p></figcaption>
           </figure>
         </section>
 
         <section class="case-section correction-section reveal">
           <div>
-            <p class="section-number">05 · The correction</p>
-            <h2>Restore Room to Home</h2>
-            <p>Room was moved back to its original, visible position on Home so that high-retention users could access it directly again.</p>
+            <p class="section-number">04 · The correction</p>
+            <h2>Keep Quick Mode. Restore Room.</h2>
+            <p>Quick Mode was retained because its 64% share of Home actions showed that it addressed a real need. Room was restored to its visible position on Home after cohort analysis showed its value to high-retention users.</p>
             <p>After this correction, retention stabilised back at its previous level.</p>
-            <div class="metric-placeholders recovery-metric"><div><span>Retention after restoration</span><strong>Pending approved metric</strong><small>Stabilised at previous level</small></div></div>
           </div>
-          <figure class="asset-placeholder required" role="img" aria-label="Final SmartHue Home screen with Room displayed directly on the main Home view.">
-            <div><strong>Content image placeholder</strong><span>Final Home screen with Room restored to its visible position.</span></div>
-            <figcaption><span>Required UI asset · Pending</span><strong>Final Home state</strong><p>Room restored to its original visible position on Home.</p></figcaption>
+          <figure class="final-home-figure">
+            <div class="final-home-figure__stage">
+              <div class="final-home-figure__screen">
+                <span>Final Home</span>
+                <img src="./assets/smarthue/home-final.png" alt="Final SmartHue Home screen with Quick Mode retained and Room restored to the primary navigation." />
+              </div>
+            </div>
+            <figcaption>Quick Mode retained. Room restored to Home.</figcaption>
           </figure>
         </section>
 
@@ -123,9 +135,9 @@
         </section>
 
         <section class="case-section closing-section reveal">
-          <p class="section-number">06 · Closing</p>
-          <h2>Look beyond the most-used action</h2>
-          <p>The team learned not to make a product decision from a narrow view of a single metric. Home needs to be evaluated from multiple, deeper perspectives—including the value a feature creates for returning users.</p>
+          <p class="section-number">05 · Closing</p>
+          <h2>High frequency and high value can coexist</h2>
+          <p>The lesson was not to choose between Quick Mode and Room. Frequent behaviour revealed an opportunity, while retention segmentation showed which existing experience could not be deprioritised. Using both signals led to a Home that served frequent actions without hiding a feature valuable to returning users.</p>
         </section>
       </article>
 
