@@ -9,6 +9,166 @@ let scrollTimer;
 
 const avatar = document.querySelector('.avatar');
 const avatarEyes = document.querySelectorAll('.avatar-eye');
+const avatarMessage = document.querySelector('.avatar-message');
+const avatarMessageText = document.querySelector('.avatar-message-text');
+const avatarMessages = ['Hello, Glad to see u here!', 'Have a good day bro!'];
+
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+let avatarSpeechTimer;
+let avatarSpeechActive = false;
+let avatarSpeechBeat = 0;
+let avatarSpeechPauseAfter = 4;
+let avatarMessageTimer;
+let avatarMessageIndex = 0;
+
+const randomBetween = (minimum, maximum) => Math.round(minimum + Math.random() * (maximum - minimum));
+const setAvatarMouth = (state) => {
+  if (avatar) avatar.dataset.mouth = state;
+};
+
+const scheduleAvatarSpeech = () => {
+  if (!avatarSpeechActive || reducedMotionQuery.matches) return;
+
+  avatarSpeechBeat += 1;
+  if (avatarSpeechBeat >= avatarSpeechPauseAfter) {
+    setAvatarMouth('closed');
+    avatarSpeechBeat = 0;
+    avatarSpeechPauseAfter = randomBetween(3, 6);
+    avatarSpeechTimer = window.setTimeout(scheduleAvatarSpeech, randomBetween(180, 320));
+    return;
+  }
+
+  const currentState = avatar.dataset.mouth;
+  const nextState = currentState === 'open' ? 'small' : (Math.random() < 0.58 ? 'open' : 'small');
+  setAvatarMouth(nextState);
+  avatarSpeechTimer = window.setTimeout(scheduleAvatarSpeech, randomBetween(80, 150));
+};
+
+const startAvatarSpeech = () => {
+  if (!avatar || avatarSpeechActive || reducedMotionQuery.matches) {
+    setAvatarMouth('closed');
+    return;
+  }
+
+  avatarSpeechActive = true;
+  avatarSpeechBeat = 0;
+  avatarSpeechPauseAfter = randomBetween(3, 6);
+  scheduleAvatarSpeech();
+};
+
+const stopAvatarSpeech = () => {
+  avatarSpeechActive = false;
+  window.clearTimeout(avatarSpeechTimer);
+  avatarSpeechTimer = undefined;
+  setAvatarMouth('closed');
+};
+
+setAvatarMouth('closed');
+window.avatarSpeech = { start: startAvatarSpeech, stop: stopAvatarSpeech };
+
+const scheduleAvatarMessage = (callback, delay) => {
+  window.clearTimeout(avatarMessageTimer);
+  avatarMessageTimer = window.setTimeout(callback, delay);
+};
+
+const showReducedMotionMessage = () => {
+  if (!avatarMessage || !avatarMessageText) return;
+
+  const message = avatarMessages[avatarMessageIndex];
+  avatarMessage.classList.add('is-visible');
+  avatarMessageText.textContent = message;
+  avatarMessage.setAttribute('aria-label', message);
+  avatarMessage.style.width = `${Math.ceil(avatarMessageText.scrollWidth) + 24}px`;
+  avatarMessageIndex = (avatarMessageIndex + 1) % avatarMessages.length;
+  scheduleAvatarMessage(showReducedMotionMessage, 3500);
+};
+
+const resizeAvatarMessage = () => {
+  if (!avatarMessage || !avatarMessageText) return;
+  avatarMessage.style.width = `${Math.max(36, Math.ceil(avatarMessageText.scrollWidth) + 24)}px`;
+};
+
+const appendAvatarMessageCharacter = (character) => {
+  const characterNode = document.createElement('span');
+  characterNode.className = 'avatar-message-character';
+  characterNode.textContent = character;
+  avatarMessageText.appendChild(characterNode);
+  resizeAvatarMessage();
+  requestAnimationFrame(() => characterNode.classList.add('is-visible'));
+};
+
+const typeAvatarMessage = () => {
+  if (!avatarMessage || !avatarMessageText || reducedMotionQuery.matches) return;
+
+  const message = avatarMessages[avatarMessageIndex];
+  let characterIndex = 0;
+  avatarMessage.setAttribute('aria-label', message);
+  window.avatarSpeech.start();
+
+  const typeNextCharacter = () => {
+    const character = message[characterIndex];
+    appendAvatarMessageCharacter(character);
+    characterIndex += 1;
+
+    if (characterIndex < message.length) {
+      const delay = /[,!.]/.test(character) ? 170 : 72;
+      scheduleAvatarMessage(typeNextCharacter, delay);
+      return;
+    }
+
+    window.avatarSpeech.stop();
+    scheduleAvatarMessage(eraseAvatarMessage, 3500);
+  };
+
+  typeNextCharacter();
+};
+
+const eraseAvatarMessage = () => {
+  if (!avatarMessageText || reducedMotionQuery.matches) return;
+
+  const eraseNextCharacter = () => {
+    const characterNode = avatarMessageText.lastElementChild;
+
+    if (characterNode) {
+      characterNode.classList.remove('is-visible');
+      scheduleAvatarMessage(() => {
+        characterNode.remove();
+        resizeAvatarMessage();
+        eraseNextCharacter();
+      }, 48);
+      return;
+    }
+
+    avatarMessageIndex = (avatarMessageIndex + 1) % avatarMessages.length;
+    scheduleAvatarMessage(typeAvatarMessage, 260);
+  };
+
+  eraseNextCharacter();
+};
+
+const startAvatarMessageLoop = () => {
+  if (!avatarMessage || !avatarMessageText) return;
+
+  window.clearTimeout(avatarMessageTimer);
+  window.avatarSpeech.stop();
+  avatarMessage.classList.add('is-visible');
+
+  if (reducedMotionQuery.matches) {
+    showReducedMotionMessage();
+  } else {
+    avatarMessageText.replaceChildren();
+    resizeAvatarMessage();
+    typeAvatarMessage();
+  }
+};
+
+reducedMotionQuery.addEventListener('change', startAvatarMessageLoop);
+
+if (reducedMotionQuery.matches) {
+  startAvatarMessageLoop();
+} else {
+  scheduleAvatarMessage(startAvatarMessageLoop, 320);
+}
 
 if (avatar && avatarEyes.length) {
   let targetX = 0;

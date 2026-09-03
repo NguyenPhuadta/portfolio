@@ -252,7 +252,7 @@
   align-items: center;
 }
 
-.automation-copy p:last-child { max-width: 520px; }
+.automation-copy p:last-child { max-width: none; }
 
 .single-screen .screen-stage {
   height: 475px;
@@ -316,7 +316,7 @@
   align-items: start;
 }
 
-.closing-grid ul { max-width: 650px; }
+.closing-grid ul { max-width: none; }
 .case-limitation { padding: 24px; border-radius: 20px; background: var(--color-background-muted); }
 .case-limitation strong { display: block; margin-bottom: 6px; color: var(--color-text-secondary); font-size: 11px; text-transform: uppercase; }
 .case-limitation p { margin: 0; font-size: 12px; line-height: 1.5; }

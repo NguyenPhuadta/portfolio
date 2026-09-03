@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260902-project-split1" />
+    <link rel="stylesheet" href="./styles.css?v=20260903-avatar-message3" />
     <link rel="stylesheet" href="./tokens.css?v=20260902-colors1" />
   </head>
   <body>
@@ -17,7 +17,7 @@
     <main>
       <section class="intro" id="about">
         <div class="avatar" aria-label="Illustrated portrait of Phú looking from side to side">
-          <img class="avatar-art" src="./assets/avatar-base-transparent.png" alt="" />
+          <img class="avatar-art" src="./assets/avatar-base-no-mouth.png" alt="" />
           <svg class="avatar-eyes" aria-hidden="true" viewBox="0 0 724 722" role="presentation">
             <g class="avatar-eye avatar-eye-left">
               <path d="M259 389C270 389 278 397 277 408C276 421 268 428 257 426C246 424 241 415 243 404C245 396 251 391 259 389Z" />
@@ -28,6 +28,27 @@
               <circle cx="382" cy="398" r="3.8" />
             </g>
           </svg>
+          <svg class="avatar-mouth" aria-hidden="true" viewBox="0 0 724 722" role="presentation">
+            <g class="avatar-mouth-state avatar-mouth-closed">
+              <path d="M307 540C329 558 363 562 389 543" />
+              <path d="M393 519C404 535 411 550 415 565" />
+            </g>
+            <g class="avatar-mouth-state avatar-mouth-small">
+              <path d="M316 540C335 532 366 532 385 542C368 556 337 557 316 540Z" />
+              <path d="M395 521C404 534 410 546 413 558" />
+            </g>
+            <g class="avatar-mouth-state avatar-mouth-open">
+              <path d="M315 536C334 524 368 524 389 538C379 564 334 568 315 536Z" />
+              <path d="M397 521C407 536 413 550 416 565" />
+            </g>
+          </svg>
+          <div class="avatar-message" role="status" aria-live="polite" aria-label="Hello, Glad to see u here!">
+            <span class="avatar-message-body" aria-hidden="true"></span>
+            <svg class="avatar-message-tail" aria-hidden="true" viewBox="8 29 17 18" preserveAspectRatio="none" role="presentation">
+              <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M23.19 40C22.2 40 21.55 40.31 20.22 41.24C19.51 41.74 16.77 43.84 14.5 45.09C12.54 46.17 10.86 46.91 10.44 46.94C9.18 47.04 9.02 45.85 9.51 45.21C10 44.57 10.56 43.74 10.78 43.29C11.26 42.28 11.41 41.75 11.41 40.24C11.41 38.38 10.09 37 9.05 36.08C8.96 36 8.84 35.9 8.7 35.79C8.46 35.6 8.23 35.41 8 35.22V29H24.99V40H23.19Z" />
+            </svg>
+            <span class="avatar-message-text" aria-hidden="true"></span>
+          </div>
         </div>
         <p class="eyebrow">Hello, I’m Phú.</p>
         <h1>I design clear product experiences for complex, measurable problems.</h1>
@@ -91,7 +112,61 @@
             </div>
           </a>
 
-          <a class="project-card featured reveal" data-category="product" href="./projects/v9snap.html">
+          <a class="project-card featured reveal" data-category="product" href="./projects/smarthue-control-experience-survey.html">
+            <div class="cover survey-cover">
+              <div class="survey-cover-label">SmartHue · Product research</div>
+              <div class="survey-cover-placeholder" aria-hidden="true">
+                <span>Content image placeholder</span>
+                <small>Survey flow assets pending</small>
+              </div>
+              <div class="survey-cover-note">Premium users · Session 2</div>
+            </div>
+            <div class="project-meta">
+              <div>
+                <h2>SmartHue Control Experience Survey</h2>
+                <p>Keeping feedback close to the control experience</p>
+              </div>
+              <span>Product case study ↗</span>
+            </div>
+          </a>
+
+          <a class="project-card featured reveal" data-category="product" href="./projects/zalo-online-teaching.html">
+            <div class="cover zalo-cover">
+              <div class="zalo-cover-label">Student project · UXFoundation K22</div>
+              <div class="zalo-cover-placeholder" aria-hidden="true">
+                <span>Content image placeholder</span>
+                <small>Online-teaching wireframes pending</small>
+              </div>
+              <div class="zalo-cover-note">Zalo concept</div>
+            </div>
+            <div class="project-meta">
+              <div>
+                <h2>Zalo Online Teaching</h2>
+                <p>Helping online teachers keep classes engaging</p>
+              </div>
+              <span>Student project ↗</span>
+            </div>
+          </a>
+
+          <a class="project-card featured reveal" data-category="product" href="./projects/katalon-academy-learning-experience.html">
+            <div class="cover katalon-cover">
+              <div class="katalon-cover-label">Team project · Top 13/180 teams</div>
+              <div class="katalon-cover-placeholder" aria-hidden="true">
+                <span>Content image placeholder</span>
+                <small>Katalon Academy wireframes pending</small>
+              </div>
+              <div class="katalon-cover-note">Learning concept</div>
+            </div>
+            <div class="project-meta">
+              <div>
+                <h2>Katalon Academy</h2>
+                <p>Making technical learning more hands-on and connected</p>
+              </div>
+              <span>Team project ↗</span>
+            </div>
+          </a>
+
+          <a class="project-card featured reveal" data-category="product" href="./projects/v9snap.html" hidden>
             <div class="cover v9snap">
               <div class="photo-stack photo-a"></div>
               <div class="photo-stack photo-b"></div>
@@ -111,7 +186,7 @@
             </div>
           </a>
 
-          <a class="project-card reveal" data-category="product" href="./projects/feature-decision.html">
+          <a class="project-card reveal" data-category="product" href="./projects/feature-decision.html" hidden>
             <div class="cover decision">
               <div class="decision-label">A product decision, challenged with evidence</div>
               <div class="chart-card">
@@ -185,6 +260,6 @@
 
     <div class="cursor-glow" aria-hidden="true"></div>
     <div class="project-open-cursor" aria-hidden="true">Open</div>
-    <script src="./script.js?v=20260901-avatar-pointer-eyes5"></script>
+    <script src="./script.js?v=20260903-avatar-speech3"></script>
   </body>
 </html>

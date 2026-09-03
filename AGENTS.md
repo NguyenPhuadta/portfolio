@@ -16,6 +16,7 @@ Khi thực hiện các nhiệm vụ liên quan đến lập kế hoạch, sửa 
 10. Workflow mặc định là `Portfolio Fast`: chỉ khảo sát target page, stylesheet liên quan và dependency dùng chung trực tiếp; plan ngắn 3–5 ý; triển khai tập trung vào nội dung và visual cần thiết để hoàn thiện portfolio. Không audit toàn repository hoặc xử lý tech debt ngoài phạm vi, trừ lỗi critical, lỗi chặn triển khai hoặc thay đổi tác động tới shared layer.
 11. Không thực hiện QA UI/visual sau khi code; người dùng sẽ tự kiểm tra giao diện. Chỉ chạy kiểm tra kỹ thuật tối thiểu khi phù hợp, như syntax, link/asset tồn tại hoặc lỗi build rõ ràng. Chỉ QA toàn bộ route khi người dùng yêu cầu rõ.
 12. Từ case study tiếp theo, ở phần detail không được tự tạo, tự vẽ hoặc tự dựng mockup/minh họa để thay thế asset chưa có. Phải dùng một block placeholder màu xám, bên trong ghi rõ `Content image placeholder` và mô tả ngắn loại hình ảnh cần bổ sung. Không áp dụng hồi tố cho các case đã triển khai, trừ khi người dùng yêu cầu.
+13. Message cạnh avatar ở homepage phải chạy loop theo nhịp: `Type câu 1 → nghỉ 3.5s → xoá → type câu 2 → nghỉ 3.5s → xoá → lặp lại`. Miệng avatar chỉ chuyển động trong pha typing, dừng trong pha nghỉ và xoá. Hai câu hiện tại là `Hello, Glad to see u here!` và `Have a good day bro!`; chỉ thay đổi khi người dùng yêu cầu rõ.
 
 Khi hỗ trợ lên kế hoạch hoặc viết nội dung cho các case study trong portfolio này, phải tuân thủ các nguyên tắc sau:
 

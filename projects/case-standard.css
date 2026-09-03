@@ -1,0 +1,116 @@
+/* Shared system for portfolio case studies. SmartHue connection is the visual reference. */
+.case-page { background: var(--color-background-page); }
+.case-page .article-shell { width: min(100% - 40px, 980px); }
+.case-page .site-bar {
+  position: sticky;
+  z-index: 61;
+  top: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100% - 40px, 980px);
+  margin: 0 auto;
+  padding: 17px 0;
+  background: transparent;
+}
+.case-page .site-bar a,
+.case-page .site-bar span { font-size: 12px; color: var(--muted); text-decoration: none; }
+.case-page .site-bar a { padding: 8px 11px; margin-left: -11px; border-radius: 99px; transition: background .2s, color .2s; }
+.case-page .site-bar a:hover { background: var(--color-background-surface); color: var(--ink); }
+.case-page .reading-progress {
+  height: 160px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--color-background-page) 0%, transparent 100%);
+}
+.case-page .reading-progress::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+}
+.case-page .reading-progress span {
+  position: relative;
+  z-index: 1;
+  height: 3px;
+}
+.case-page .article-shell { margin-top: 82px; }
+.case-page .case-hero { max-width: none; margin-bottom: 128px; }
+.case-page .case-hero h1 { max-width: none; }
+.case-page .case-hero .dek { max-width: none; }
+.case-page .case-body { color: var(--color-text-secondary); }
+.case-page .case-section { margin-bottom: 138px; }
+.case-page .section-number { margin: 0 0 16px; color: var(--color-text-muted); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.case-page .case-section h2 { max-width: none; margin-bottom: 24px; color: var(--color-text-primary); font-size: clamp(30px, 5vw, 48px); line-height: 1.04; font-weight: 560; }
+.case-page .copy-column,
+.case-page .scope-list,
+.case-page .contribution-block,
+.case-page .closing-section,
+.case-page .original-case,
+.case-page .source-note,
+.case-page .trigger-sequence { max-width: none; }
+
+.case-page .case-status,
+.case-page .concept-note { display: flex; gap: 12px; align-items: center; width: fit-content; margin-top: 30px; padding: 9px 12px; border-radius: 999px; background: var(--color-warning-surface); font-size: 11px; }
+.case-page .case-status span,
+.case-page .concept-note span { color: var(--color-warning-text); font-weight: 600; }
+.case-page .case-status p,
+.case-page .concept-note p { margin: 0; color: var(--color-text-muted); }
+.case-page .scope-list,
+.case-page .contribution-block { max-width: none; margin: 38px 0 0; padding-top: 22px; border-top: 1px solid var(--color-border-default); }
+.case-page .scope-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.case-page .scope-list div,
+.case-page .contribution-block div { min-width: 0; }
+.case-page .scope-list dt,
+.case-page .contribution-block dt,
+.case-page .contribution-block h2 { margin: 0 0 5px; color: var(--color-text-muted); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.case-page .scope-list dd,
+.case-page .contribution-block dd { margin: 0; color: var(--color-text-primary); font-size: 13px; font-weight: 500; }
+.case-page .contribution-block h2 { margin-bottom: 14px; }
+.case-page .contribution-block dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; }
+
+.case-page .content-placeholder,
+.case-page .asset-placeholder { display: grid; min-height: 320px; margin: 42px 0 0; overflow: hidden; border: 1px solid var(--color-border-default); border-radius: 28px; background: var(--color-background-muted); }
+.case-page .content-placeholder > div,
+.case-page .asset-placeholder > div { display: grid; place-content: center; gap: 10px; min-height: 258px; padding: 34px; color: var(--color-text-secondary); text-align: center; background: transparent; }
+.case-page .content-placeholder strong,
+.case-page .asset-placeholder strong { color: var(--color-text-primary); font-size: 14px; font-weight: 600; }
+.case-page .content-placeholder span,
+.case-page .asset-placeholder span { max-width: 460px; font-size: 12px; line-height: 1.5; }
+.case-page .content-placeholder figcaption,
+.case-page .asset-placeholder figcaption { display: grid; gap: 5px; padding: 14px 18px; border-top: 1px solid var(--color-border-default); background: var(--color-background-surface); color: var(--color-text-muted); font-size: 10px; }
+.case-page .asset-placeholder figcaption span { color: var(--color-text-muted); font-size: 9px; font-weight: 600; text-transform: uppercase; }
+.case-page .asset-placeholder figcaption strong { font-size: 13px; }
+.case-page .asset-placeholder figcaption p { margin: 0; color: var(--color-text-muted); font-size: 11px; line-height: 1.45; }
+
+.case-page .closing-section { max-width: none; padding: 48px; border-radius: 28px; background: var(--color-background-muted); }
+.case-page .original-case { max-width: none; margin: -78px 0 120px; padding-top: 28px; border-top: 1px solid var(--color-border-default); }
+.case-page .original-case h2 { margin: 0 0 10px; color: var(--color-text-muted); font-size: 10px; font-weight: 500; text-transform: uppercase; }
+.case-page .original-case a { color: var(--color-link); font-size: 13px; text-decoration: underline; text-decoration-color: var(--color-border-default); text-underline-offset: 4px; }
+
+.case-page .case-comparison-placeholder { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); gap: 18px; align-items: center; }
+.case-page .asset-placeholder > .case-comparison-placeholder { min-height: 300px; padding: 24px; place-content: stretch; }
+.case-page .comparison-card { display: grid; gap: 12px; text-align: center; }
+.case-page .comparison-card__image { display: grid; min-height: 214px; place-items: center; padding: 22px; border-radius: 22px; background: var(--color-background-subtle); color: var(--color-text-muted); font-size: 11px; }
+.case-page .comparison-card__label { color: var(--color-text-primary); font-size: 12px; font-weight: 600; }
+.case-page .comparison-card__description { color: var(--color-text-muted); font-size: 10px; line-height: 1.45; }
+.case-page .comparison-arrow { color: var(--color-text-muted); font-size: 22px; text-align: center; }
+.case-page .comparison-outcome { justify-self: center; padding: 6px 10px; border-radius: 999px; background: var(--color-success-surface); color: var(--color-success-900); font-size: 10px; }
+
+@media (max-width: 760px) {
+  .case-page .article-shell { width: min(100% - 28px, 980px); }
+  .case-page .article-shell { margin-top: 42px; }
+  .case-page .case-hero { margin-bottom: 86px; }
+  .case-page .case-section { margin-bottom: 94px; }
+  .case-page .case-section h2 { font-size: 31px; }
+  .case-page .scope-list,.case-page .contribution-block dl { grid-template-columns: 1fr; gap: 12px; }
+  .case-page .case-status,.case-page .concept-note { align-items: flex-start; border-radius: 16px; }
+  .case-page .content-placeholder,.case-page .asset-placeholder { min-height: 250px; }
+  .case-page .content-placeholder > div,.case-page .asset-placeholder > div { min-height: 194px; padding: 26px 20px; }
+  .case-page .closing-section { padding: 30px 22px; }
+  .case-page .original-case { margin-top: -42px; margin-bottom: 84px; }
+  .case-page .case-comparison-placeholder { grid-template-columns: 1fr; }
+  .case-page .comparison-arrow { transform: rotate(90deg); }
+}
