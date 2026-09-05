@@ -45,6 +45,15 @@
 .smarthue-page .copy-column,
 .smarthue-page .section-intro { max-width: 100%; }
 
+.smarthue-page .case-brief { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin: 38px 0 0; padding: 22px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.smarthue-page .case-brief li { min-width: 0; }
+.smarthue-page .case-brief span { display: block; margin-bottom: 5px; color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.smarthue-page .case-brief strong { display: block; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.4; }
+.smarthue-page .case-points { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.smarthue-page .case-points li { position: relative; padding-left: 20px; }
+.smarthue-page .case-points li::before { content: ""; position: absolute; top: .72em; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--color-primary-500); }
+.smarthue-page .case-points strong { color: var(--ink); font-weight: 600; }
+
 .smarthue-page code {
   padding: 2px 5px;
   border-radius: 6px;
@@ -353,6 +362,7 @@
   .smarthue-page .case-hero { margin-bottom: 88px; }
   .smarthue-page .case-section { margin-bottom: 96px; }
   .smarthue-page .case-section h2 { font-size: 31px; }
+  .smarthue-page .case-brief { grid-template-columns: 1fr; gap: 12px; }
   .legacy-flow figcaption { display: grid; }
   .flow-steps, .decision-sequence { display: grid; grid-template-columns: 1fr; }
   .flow-steps i, .decision-sequence i { transform: rotate(90deg); text-align: center; }

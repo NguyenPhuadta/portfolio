@@ -44,9 +44,7 @@ The flow also includes clear recovery paths for no device found and connection t
 
 ### Outcome
 
-Following the redesigned connection journey, the team reported increased successful connections and reduced connection time. Public metric definitions, baselines and measurement periods are pending confirmation, so these outcomes are presented qualitatively here.
-
-**Metric display:** Add exact connection-success and connection-time metrics only after the measurement definition and approval for public display are confirmed.
+The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. The team also reported reduced connection time.
 
 ### What I’d improve next
 
@@ -82,7 +80,7 @@ Using GA4 to identify where users dropped after device discovery, then proposing
 
 ### Outcome summary
 
-After the user starts a scan, the new flow detects a device and begins connection automatically, improving connection success and reducing the time needed to complete setup.
+The shipped automatic-connection flow increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. Connection time also decreased.
 
 ## 2. Suggested page structure
 
@@ -224,7 +222,7 @@ A more successful, faster connection journey
 
 #### Body copy
 
-The team reported increased successful connections and reduced connection time after the redesigned journey. Public metric definitions, baselines and measurement periods remain pending confirmation.
+The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. Connection time also decreased.
 
 #### Confirmed qualitative outcomes
 
@@ -320,6 +318,10 @@ outcome-section
 
 - The case is about improving SmartHue's device-connection journey.
 - The two frequently used device types in scope are Bridge and Hue BLE Light.
+- The automatic-connection flow shipped for both Bridge and Hue BLE Light.
+- Sequential multi-light connection shipped; the factory-reset state for incompatible lights did not ship.
+- Personal contribution covered GA4 analysis, old/new-flow mapping, UI, prototype, handoff, build validation and post-launch analysis.
+- PM, Engineering, Marketing and a design mentor supported the work; the mentor acted as a peer providing direction rather than micromanaging the work.
 - The user reviewed GA4 data and identified drop-off after device discovery.
 - GA4 located drop-off at the step where users selected a discovered light.
 - The user proposed removing that manual-selection step and moving to automatic connection.
@@ -335,21 +337,18 @@ outcome-section
 - The supplied Figma artifact confirms the Bridge flow: local-network permission, scan initiation, no-device recovery, physical Bridge-button instruction, timeout recovery and success.
 - The supplied Figma artifact confirms the BLE flow: method selection, scan initiation, automatic connection to `Hue color lamp`, no-light recovery, timeout recovery and success.
 - The failure cases followed technical states supplied by Engineering.
-- The successful-connection rate increased and connection time decreased.
+- The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%.
+- Connection time decreased.
 
 ## 6. Needs confirmation
 
 1. Does `Bridge` specifically mean **Philips Hue Bridge**? Is `Hue BLE Light` the exact public-facing device name to use?
-2. Beyond reviewing GA4 and identifying the low connection rate, what parts did you personally deliver: mapping the old flow, defining the new flow, UI design, prototyping, documenting states, validating the build or post-release analysis?
-3. Was the automatic flow implemented for both Bridge and Hue BLE Light, or did their final flows differ?
-4. Was this redesign shipped to users? If yes, on which platform or platforms?
-5. The existing portfolio handoff mentions **+20% successful connections** and **−40% connection time** for SmartHue. Are these the exact metrics for this automatic-connection case, and are they approved for public display?
-6. How were connection success and connection time measured? Please provide the event/funnel definition, comparison period, experiment type or other available context.
-7. What exact technical failure states did Engineering provide, and what UI or interaction decisions did you make for each state?
-8. You confirmed GA4 exposed the low connection rate. Did GA4 also identify the specific unclear screens, or did those friction points come from your flow review, testing, user feedback or another source?
-9. Which screens, flows, prototypes or analytics visuals can be shown publicly in the case study?
-10. Should the portfolio use first-person contribution language (`I designed...`) or team language only (`We redesigned...`) for this case?
-11. Did Engineering propose the technical detection/connection method after you proposed removing manual selection? Please confirm the wording that most accurately separates your product/design proposal from Engineering's technical contribution.
+2. What are the exact event/funnel definitions, time range and experiment type behind the connection-success and in-app-purchase results?
+3. Are the supplied experiment screenshots approved for public use in redacted or unredacted form?
+4. What exact technical failure states did Engineering provide, and what UI or interaction decisions did you make for each state?
+5. Did GA4 also identify the specific unclear screens, or did those friction points come from your flow review, testing, user feedback or another source?
+6. Which platforms received the shipped redesign?
+7. Did Engineering propose the technical detection/connection method after you proposed removing manual selection? Please confirm the wording that most accurately separates your product/design proposal from Engineering's technical contribution.
 
 ## 7. Editorial suggestions
 

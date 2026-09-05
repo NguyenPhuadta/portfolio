@@ -21,6 +21,12 @@
         <p class="kicker">SmartHue · Device connection</p>
         <h1>Removing friction from smart-light connection</h1>
         <p class="dek">Using GA4 to identify where users dropped after device discovery, then proposing a Bridge and Hue BLE Light journey that begins connection automatically after a user starts a scan.</p>
+        <ul class="case-brief" aria-label="Case at a glance">
+          <li><span>Role</span><strong>End-to-end product design</strong></li>
+          <li><span>Scope</span><strong>Bridge &amp; Hue BLE Light</strong></li>
+          <li><span>Collaboration</span><strong>PM, Engineering, Marketing &amp; design mentor</strong></li>
+          <li><span>Outcome</span><strong>+55% connection success · +118% purchase rate</strong></li>
+        </ul>
       </header>
 
       <article class="article-body case-body">
@@ -28,9 +34,11 @@
           <p class="section-number">01 · The problem</p>
           <h2>GA4 showed drop-off after device discovery</h2>
           <div class="copy-column">
-            <p>Connecting a light was a critical first step in SmartHue. For Bridge and Hue BLE Light, GA4 showed drop-off after devices were found, in the part of the flow where users reviewed a device list and tapped <code>Connect</code>. The data located the drop-off; it did not explain why users left the journey.</p>
-            <p>In the previous Bridge flow, tapping <code>Connect</code> did not complete the interaction: users then had to press the physical button on the Bridge.</p>
-            <p>The existing flow also required users to recover when no light was found. Whether the additional selection step itself increased connection time or caused drop-off was not verified with user research.</p>
+            <ul class="case-points">
+              <li><strong>Signal</strong> GA4 located drop-off after device discovery, when users reviewed a device list and tapped <code>Connect</code>.</li>
+              <li><strong>Extra step</strong> In the previous Bridge flow, tapping <code>Connect</code> was followed by pressing the physical button on the Bridge.</li>
+              <li><strong>Limitation</strong> The data located the drop-off but did not explain why users left; the role of manual selection was not verified with user research.</li>
+            </ul>
           </div>
           <figure class="legacy-flow" aria-label="Previous connection flow; this diagram explains the flow and is not analytics evidence.">
             <figcaption><strong>Previous flow</strong><span>GA4 funnel image pending</span></figcaption>
@@ -41,7 +49,7 @@
         <section class="case-section reveal">
           <p class="section-number">02 · From data to a product decision</p>
           <h2>A proposal to reduce manual selection after discovery</h2>
-          <div class="copy-column"><p>I reviewed the connection funnel in GA4 and proposed removing the manual-selection step after discovery. Users still start a scan with <code>Scan Now</code>. When SmartHue finds a supported device, the proposed journey moves directly into connection; the engineering implementation provides the underlying discovery and connection behaviour.</p></div>
+          <div class="copy-column"><ul class="case-points"><li><strong>Decision</strong> I proposed removing the manual-selection step after discovery.</li><li><strong>User control</strong> Users still start a scan with <code>Scan Now</code>.</li><li><strong>Collaboration</strong> Once a supported device is found, the flow moves into connection; Engineering implements the underlying discovery and connection behaviour.</li></ul></div>
           <div class="decision-sequence" aria-label="Decision sequence"><span>GA4 finding</span><i>→</i><span>Remove manual selection</span><i>→</i><span>Automatic connection</span></div>
         </section>
 
@@ -93,7 +101,7 @@
           <div class="automation-copy">
             <p class="section-number">04 · Clear feedback</p>
             <h2>Connection feedback designed around engineering states</h2>
-            <p>For Hue BLE Light, I designed feedback that shows the model currently being connected, such as <code>Hue color lamp</code>. The flow presents engineering-provided connection states, including sequential connection when more than one light is found, so progress remains visible without repeated manual selection.</p>
+            <ul class="case-points"><li><strong>Visible feedback</strong> The UI shows the model currently being connected, such as <code>Hue color lamp</code>.</li><li><strong>Multiple lights</strong> The shipped flow connects lights in detection order, keeping progress visible without repeated manual selection.</li><li><strong>System states</strong> The interface translates connection states supplied by Engineering into a user-facing journey.</li></ul>
           </div>
           <figure class="single-screen">
             <div class="screen-stage">
@@ -108,25 +116,24 @@
 
         <section class="case-section outcome-section reveal">
           <p class="section-number">05 · Outcome</p>
-          <h2>Reported team outcome</h2>
-          <div class="copy-column"><p>Following the redesigned connection journey, the team reported increased successful connections and reduced connection time. Public metric definitions, baselines and measurement periods are pending confirmation, so these outcomes are presented qualitatively here.</p></div>
+          <h2>Results from automatic connection</h2>
+          <div class="copy-column"><p>The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. The team also reported reduced connection time.</p></div>
           <div class="qualitative-outcomes">
-            <div><span>Successful connections</span><strong>Increased</strong></div>
-            <div><span>Connection time</span><strong>Reduced</strong></div>
+            <div><span>Reached connection success</span><strong>+55%</strong></div>
+            <div><span>In-app purchase rate</span><strong>+118%</strong></div>
           </div>
         </section>
 
         <section class="case-section reveal">
           <div class="closing-grid">
-            <div><p class="section-number">06 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul><li>Keep the user in the connection journey until every detected device has completed connection, then take them to light controls.</li><li>Add a factory-reset recovery state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
+            <div><p class="section-number">06 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul class="case-points"><li><strong>Completion</strong> Keep users in the connection journey until every detected device has completed connection, then take them to light controls.</li><li><strong>Recovery</strong> Add a factory-reset state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
             <aside class="future-note"><strong>Future proposal</strong><p>These directions are not shipped work or reported outcomes.</p></aside>
           </div>
         </section>
 
         <aside class="case-limitation case-limitation--standalone reveal">
           <strong>Limitation</strong>
-          <p>Because I did not have direct access to users, I could not verify why people dropped at the Connect button. The proposed explanation is therefore a hypothesis informed by funnel data, not a confirmed user insight.</p>
-          <p>To validate this, I would run a usability-testing session with employees who do not work on SmartHue if representative users cannot be recruited.</p>
+          <ul class="case-points"><li><strong>What I could not verify</strong> I did not have direct access to users, so the explanation for drop-off at <code>Connect</code> remains a funnel-informed hypothesis.</li><li><strong>Next validation</strong> Run usability sessions with representative users—or employees outside the SmartHue team if recruitment is not possible.</li></ul>
         </aside>
       </article>
 
