@@ -42,9 +42,17 @@ For Bridge, the flow moves from discovery to the required physical action: press
 
 The flow also includes clear recovery paths for no device found and connection timeout, both with a `Try Again` action.
 
-### Outcome
+### A/B test outcome
 
-The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. The team also reported reduced connection time.
+In the A/B test, the auto-connect variant was compared with the baseline flow. The rate of users reaching the connection-success screen increased from 17% to 27%, a 55% relative change versus baseline. In-app purchase rate increased from 6.1% to 13%, a 118% relative change versus baseline. The team also reported reduced connection time.
+
+### Post-launch funnel performance
+
+The applied automatic-connection flow was compared across matching three-month windows before and after launch. The initial funnel events represent the same connection-flow entry point in both periods.
+
+- **BLE:** scan-to-success increased from **18.46%** to **25.5%** (**+7.04 percentage points** / **+38% relative increase**). The device-found-to-success rate increased from **42.94%** to **46.57%**.
+- **Bridge:** scan-to-success increased from **24.05%** to **28.1%** (**+4.05 percentage points** / **+17% relative increase**). The device-found-to-success rate increased from **64.57%** to **77.97%**.
+- This before–after comparison is consistent with a less interrupted journey after device discovery. It is not, on its own, causal proof that removing manual selection caused the increase.
 
 ### What I’d improve next
 
@@ -78,9 +86,13 @@ Making SmartHue Connection Faster and More Reliable
 
 Using GA4 to identify where users dropped after device discovery, then proposing a Bridge and Hue BLE Light journey that begins connection automatically after the user starts a scan.
 
-### Outcome summary
+### A/B test outcome summary
 
-The shipped automatic-connection flow increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. Connection time also decreased.
+Compared with the baseline in an A/B test, the shipped auto-connect variant increased the connection-success-screen rate from 17% to 27% and in-app purchase rate from 6.1% to 13%. Connection time also decreased.
+
+### Post-launch funnel summary
+
+Across matching three-month windows before and after automatic connection was applied, overall scan-to-success increased for BLE from 18.46% to 25.5% and for Bridge from 24.05% to 28.1%. The device-found-to-success rate also increased in both journeys: BLE from 42.94% to 46.57%, and Bridge from 64.57% to 77.97%.
 
 ## 2. Suggested page structure
 
@@ -222,12 +234,28 @@ A more successful, faster connection journey
 
 #### Body copy
 
-The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%. Connection time also decreased.
+In the A/B test, the auto-connect variant increased the connection-success-screen rate from 17% to 27% and in-app purchase rate from 6.1% to 13%, compared with the baseline. Connection time also decreased.
 
 #### Confirmed qualitative outcomes
 
 - Successful connections increased.
 - Connection time decreased.
+
+### Section 06 — Post-launch funnel performance
+
+#### Heading
+
+More users completed connection after discovery
+
+#### Body copy
+
+Compared matching three-month windows before and after automatic connection was applied. The initial funnel event represents the same connection-flow entry point in both periods. BLE scan-to-success increased from 18.46% to 25.5%; Bridge increased from 24.05% to 28.1%. The device-found-to-success rate also increased for BLE (42.94% to 46.57%) and Bridge (64.57% to 77.97%).
+
+#### Developer notes
+
+- Use two metric cards for scan-to-success: BLE **18.46% → 25.5%**, Bridge **24.05% → 28.1%**.
+- Use bullets for the device-found-to-success results and the three-month measurement scope.
+- State that the before–after comparison does not by itself establish causation.
 - The manual device-selection step was removed from the redesigned flow.
 
 #### Developer notes
@@ -324,6 +352,8 @@ outcome-section
 - PM, Engineering, Marketing and a design mentor supported the work; the mentor acted as a peer providing direction rather than micromanaging the work.
 - The user reviewed GA4 data and identified drop-off after device discovery.
 - GA4 located drop-off at the step where users selected a discovered light.
+- In the legacy Bridge funnel, 64.57% of users who reached `FoundDeviceScr_Show` then reached the success screen; the scan-to-success rate was 24.05%. In the legacy BLE funnel, the corresponding rates were 42.94% and 18.46%.
+- The initial legacy and new funnel events both represent the same connection-flow entry point; their event names changed between periods.
 - The user proposed removing that manual-selection step and moving to automatic connection.
 - The journey was unclear when a light could not be found.
 - After a device was found, users could be unsure where to tap next.
@@ -339,6 +369,7 @@ outcome-section
 - The failure cases followed technical states supplied by Engineering.
 - The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%.
 - Connection time decreased.
+- The post-launch funnels compare matching three-month windows before and after automatic connection was applied. BLE scan-to-success increased from 18.46% to 25.5%, and device-found-to-success increased from 42.94% to 46.57%. Bridge scan-to-success increased from 24.05% to 28.1%, and device-found-to-success increased from 64.57% to 77.97%.
 
 ## 6. Needs confirmation
 

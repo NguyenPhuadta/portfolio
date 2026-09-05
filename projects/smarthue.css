@@ -314,9 +314,10 @@
 }
 
 .qualitative-outcomes div { padding: 24px; border-radius: 21px; background: var(--color-background-surface); }
-.qualitative-outcomes span, .qualitative-outcomes strong { display: block; }
+.qualitative-outcomes span, .qualitative-outcomes strong, .qualitative-outcomes small { display: block; }
 .qualitative-outcomes span { margin-bottom: 14px; color: var(--muted); font-size: 10px; text-transform: uppercase; }
 .qualitative-outcomes strong { color: var(--ink); font-size: 26px; font-weight: 560; }
+.qualitative-outcomes small { margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.4; }
 
 .closing-grid {
   display: grid;
