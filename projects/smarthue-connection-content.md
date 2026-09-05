@@ -22,17 +22,17 @@ target_page: "projects/smarthue.html"
 
 **Title:** Removing friction from smart-light connection
 
-**Dek:** Using GA4 to identify a high-drop-off manual-selection step, then redesigning the Bridge and Hue BLE Light journeys around automatic connection.
+**Dek:** Using GA4 to identify where users dropped after device discovery, then proposing a Bridge and Hue BLE Light journey that begins connection automatically after a user starts a scan.
 
 ### The problem
 
-Connecting a light was a critical first step in SmartHue, yet the successful-connection rate was low for Bridge and Hue BLE Light. GA4 showed substantial drop-off after devices were found, at the point where users had to work through a device list and tap `Connect` themselves.
+Connecting a light was a critical first step in SmartHue. For Bridge and Hue BLE Light, GA4 showed drop-off after devices were found, in the part of the flow where users reviewed a device list and tapped `Connect`. The data located the drop-off; it did not explain why users left the journey.
 
-The journey was also difficult when no light was found, and the additional selection step made connection take longer than necessary.
+The existing flow also required users to recover when no light was found. Whether the additional selection step itself increased connection time or caused drop-off was not verified with user research.
 
 ### From data to a product decision
 
-I reviewed the connection funnel in GA4 and proposed removing the manual-selection step after discovery. The goal was not to remove user control from the whole journey: users still start a scan with `Scan Now`. Instead, once SmartHue finds a supported device, the system should move directly into connection.
+I reviewed the connection funnel in GA4 and proposed removing the manual-selection step after discovery. Users still start a scan with `Scan Now`. When SmartHue finds a supported device, the proposed journey moves directly into connection; the engineering implementation provides the underlying discovery and connection behaviour.
 
 ### Designing around the system
 
@@ -44,7 +44,7 @@ The flow also includes clear recovery paths for no device found and connection t
 
 ### Outcome
 
-The redesigned flow removed the manual device-selection step. Successful connections increased and connection time decreased, helping users reach their first connected light with less effort.
+Following the redesigned connection journey, the team reported increased successful connections and reduced connection time. Public metric definitions, baselines and measurement periods are pending confirmation, so these outcomes are presented qualitatively here.
 
 **Metric display:** Add exact connection-success and connection-time metrics only after the measurement definition and approval for public display are confirmed.
 
@@ -78,7 +78,7 @@ Making SmartHue Connection Faster and More Reliable
 
 ### Short description
 
-Using GA4 to identify a high-drop-off device-selection step, then redesigning the Bridge and Hue BLE Light journey so SmartHue detects and begins connection automatically after the user starts a scan.
+Using GA4 to identify where users dropped after device discovery, then proposing a Bridge and Hue BLE Light journey that begins connection automatically after the user starts a scan.
 
 ### Outcome summary
 
@@ -94,7 +94,7 @@ Improving a critical setup journey
 
 #### Body copy
 
-SmartHue had a low successful-connection rate for two frequently used device types: Bridge and Hue BLE Light. GA4 showed substantial drop-off after devices were found, at the step where users had to tap and select a light to continue. The connection journey also took longer than intended.
+GA4 showed drop-off after devices were found, in the step where users reviewed a device list and tapped to continue. The data located this point in the journey but did not explain why users left.
 
 #### Developer notes
 
@@ -112,7 +112,7 @@ Users could get stuck before connecting a light
 
 The existing journey created friction in two important moments. If SmartHue could not find a light, the next step was difficult to understand. Even when devices were found, users still had to understand where to tap and manually select a light to continue.
 
-GA4 showed that this manual-selection step had substantial drop-off. It added a decision between discovery and connection, including for users with only one light or one Hue Bridge.
+GA4 showed drop-off in the manual-selection part of the journey. It added a decision between discovery and connection, including for users with only one light or one Hue Bridge.
 
 The friction was particularly relevant when two, three or more lights were involved. In the redesigned flow, discovered lights are connected one at a time in detection order.
 
@@ -121,14 +121,13 @@ The friction was particularly relevant when two, three or more lights were invol
 - The experience was unclear when no light was found.
 - After a device was found, the action required to continue was not obvious.
 - Manually selecting a device added another step to the journey.
-- GA4 showed substantial drop-off at the manual device-selection step.
+- GA4 located drop-off at the manual device-selection step.
 - The overall connection process took longer.
 
 #### Evidence
 
 - Source: GA4
-- Finding: the successful-connection rate was low.
-- Finding: the step where users selected a discovered light had substantial drop-off.
+- Finding: GA4 located drop-off after device discovery, where users reviewed a device list and selected a light.
 - Exact drop-off rate, funnel definition, time period and baseline: pending confirmation.
 
 #### Developer notes
@@ -150,7 +149,7 @@ After reviewing the GA4 funnel, I proposed removing the step where users had to 
 #### Developer notes
 
 - Suggested component: `evidence-to-opportunity`
-- Show the sequence as `GA4 finding → high-drop-off selection step → proposal to remove the step → automatic connection direction → Engineering collaboration`.
+- Show the sequence as `GA4 finding → drop-off after discovery → proposal to remove the step → automatic connection direction → Engineering collaboration`.
 - It is confirmed that the designer proposed removing manual selection and moving to automatic connection. Do not claim ownership of the underlying detection or connection technology.
 
 ### Section 04 — Design direction
@@ -225,7 +224,7 @@ A more successful, faster connection journey
 
 #### Body copy
 
-The automatic connection flow improved the successful-connection rate and reduced connection time. Users could move through device discovery and connection with less manual effort.
+The team reported increased successful connections and reduced connection time after the redesigned journey. Public metric definitions, baselines and measurement periods remain pending confirmation.
 
 #### Confirmed qualitative outcomes
 
@@ -245,7 +244,7 @@ The automatic connection flow improved the successful-connection rate and reduce
 
 | ID | Asset | Placement | Content requirement | Developer note |
 | --- | --- | --- | --- | --- |
-| R1 | GA4 funnel or chart | Problem | Show the connection funnel and the high drop-off at manual device selection. Redact anything confidential. | Use as the primary evidence asset; annotate the selection step rather than adding unsupported numbers. |
+| R1 | GA4 funnel or chart | Problem | Show the connection funnel and annotate the drop-off after device discovery. Redact anything confidential. | Use as the primary evidence asset; annotate the selection step rather than adding unsupported numbers. |
 | R2 | Simplified old-flow diagram | Immediately below R1 | `Start scan → device list → tap Connect → press the physical Bridge button → connection` | Build this as an accessible HTML/CSS diagram if the GA4 image cannot be published. It is explanatory, not a substitute for R1. |
 
 ### UI assets — include
@@ -321,9 +320,8 @@ outcome-section
 
 - The case is about improving SmartHue's device-connection journey.
 - The two frequently used device types in scope are Bridge and Hue BLE Light.
-- The successful-connection rate was low.
-- The user reviewed GA4 data and identified the low successful-connection rate.
-- GA4 showed substantial drop-off at the step where users selected a discovered light.
+- The user reviewed GA4 data and identified drop-off after device discovery.
+- GA4 located drop-off at the step where users selected a discovered light.
 - The user proposed removing that manual-selection step and moving to automatic connection.
 - The journey was unclear when a light could not be found.
 - After a device was found, users could be unsure where to tap next.

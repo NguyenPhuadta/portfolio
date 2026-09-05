@@ -1,101 +1,86 @@
 ---
-title: "When a low-frequency feature serves high-value users"
+title: "When a low-frequency feature serves high-retention users"
 slug: "smarthue-home-room-prioritisation"
 product: "SmartHue"
-status: "narrative confirmed — selected supporting assets and Home pay-rate value pending"
+status: "draft — analytics assets and metric definitions pending"
 target_page: "projects/smarthue-home-room.html"
 ---
 
-# SmartHue Home / Room case — working content
+# SmartHue Home / Room — content handoff
+
+> This is a draft. The public narrative uses only confirmed project facts. Items under **Cần xác nhận** must not be presented as established evidence.
 
 ## Đã xác nhận
 
-- Đây là case ở phase **Engagement** của HEART framework.
-- Trên bản Home original, đổi màu là action điều khiển đèn được dùng nhiều nhất, cao hơn bật/tắt và chỉnh độ sáng.
-- Feedback App Store nêu nhu cầu đổi màu cho nhiều đèn cùng lúc.
-- **Quick Mode** được thêm để đổi màu cho toàn bộ đèn cùng lúc.
-- Trong thời gian test Home mới, Quick Mode chiếm **64%** các action được ghi nhận trên Home.
-- Room được hiển thị trực tiếp trên Home ở phiên bản cũ.
-- Dữ liệu cho thấy Room ít được bấm và ít được tạo.
-- Ở thiết kế mới, Room vẫn ở Home nhưng được chuyển vào **More options**, theo hướng tương tự Apple Home.
-- Sau khi bản test được đưa lên, user retention giảm và pay rate ở Home giảm.
-- Overall retention giảm từ **12%** xuống **9.6%** (**−19%** so với baseline).
-- New users tạo Room trong 24 giờ đầu có W1 retention **19.4%**, so với **9.4%** ở nhóm không tạo Room.
-- Việc đưa Room vào vị trí khó tìm đã ảnh hưởng đến nhóm user trung thành/value user.
-- Sau khi phát hiện insight này, Room được đưa trở lại vị trí cũ và hiển thị trực tiếp trên Home.
-- Quick Mode được giữ lại sau test.
-- Test là A/B test, được đo trong khoảng một tháng.
-- Home có kịch bản kiếm tiền: sau khi người dùng điều khiển đèn đến một limit nhất định, Home hiển thị paywall.
-- Sau khi Room được đưa lại lên Home, retention tăng ổn định trở lại mức cũ.
-- Vai trò cá nhân: đọc data để đưa ra product decision, thiết kế UI flow, và handoff cho Engineering/Developer.
-- Screenshot analytics có thể chia sẻ công khai.
+- This case belongs to the Engagement phase of the HEART framework.
+- In the original Home, changing colour was the most-used light-control action, ahead of on/off and brightness. App Store feedback requested changing the colour of several lights at once.
+- The one-month A/B test combined two changes: Quick Mode was added to change the colour of all lights at once, and Room moved from Home into More options.
+- Quick Mode accounted for 64% of recorded Home actions during the test.
+- Overall retention was 12% in the 235-user baseline and 9.6% in the 228-user Variant A.
+- Home pay rate decreased by 1.4% during the test; the result was not highly significant.
+- New users who created a Room within 24 hours had W1 retention of 19.4%, compared with 9.4% among users who did not.
+- Before the test, Room creators returned to use every measured core Home control at higher rates than non-creators.
+- User reports that overall use of the main core controls declined in the test; detailed event-level values are pending.
+- The immediate recovery version restored Room directly on Home, deferred Quick Mode, and retention returned to slightly above the 12% baseline.
+- Personal role: reviewed product data to inform the product decision, designed UI flows, and prepared handoff for Engineering/Developer.
 
 ## Gợi ý biên tập: luận điểm chính
 
-Đây là case về việc **frequency và user value có thể cùng tồn tại**. Dữ liệu 64% xác nhận Quick Mode giải quyết một nhu cầu thật, trong khi retention segmentation cho thấy không thể giảm prominence của Room đối với một nhóm ít đông hơn nhưng có giá trị cao.
+Room frequency alone was not enough evidence to lower its prominence. The Room-creator cohort was associated with both higher W1 retention and higher return use of core Home controls. The A/B variant changed both Quick Mode and Room placement, so it cannot isolate causality. The immediate decision was to restore Room and defer Quick Mode.
 
-Không nên nói Room bị xoá: Room vẫn tồn tại, nhưng việc chuyển nó vào More options khiến người dùng giá trị khó tìm thấy hơn.
+Do not describe this cohort as `high-value users` until a public, confirmed business-value definition exists. `High-retention, high-core-control-engagement users` is supported by the available data.
 
-## Bản nháp copy ngắn cho portfolio
+## Recommended public case copy
 
 ### Hero
 
-**Eyebrow**  
-SmartHue · Engagement
+**Eyebrow:** SmartHue · Engagement
 
-**H1**  
-When a low-frequency feature serves high-value users
+**Title:** When a low-frequency feature serves high-retention users
 
-**Dek**  
-Using GA4 to prioritise frequent controls, then combining test and cohort data to retain Quick Mode while restoring Room for high-retention users.
+**Dek:** An A/B test combined Quick Mode with a less visible Room entry. The results showed why frequency alone was not enough to deprioritise Room.
 
-### The first signal
+### 01 · The first signal
 
-**H2**  
-Home was not prioritising everyday behaviour
+**Heading:** Home was not prioritising everyday behaviour
 
-**Body**  
 GA4 data from the original Home showed that changing colour was the most-used light-control action—ahead of turning lights on or off and adjusting brightness. App Store feedback also pointed to a need to change the colour of several lights at once.
 
 Room, meanwhile, was visible directly on Home but was created and opened less often.
 
-### The initial decision
+### 02 · The initial decision
 
-**H2**  
-Bring multi-light colour control forward
+**Heading:** Make room for multi-light colour control
 
-**Body**  
-Quick Mode was added so users could change the colour of all lights at once. Room was moved into More options on Home, keeping it available without giving it equal priority to frequent controls.
+The test variant added Quick Mode so users could change the colour of all lights at once. To make Home cleaner and create space for this new control, Room was moved into More options. Room remained available; it was not removed.
 
-### What the test revealed
+**Tested change:** Quick Mode was added while Room moved into More options. These changes were tested together.
 
-**H2**  
-The test validated Quick Mode—but exposed the cost of hiding Room
+### 03 · What the test revealed
 
-**Body**  
-During the new Home test, Quick Mode accounted for 64% of recorded Home actions—strong evidence that multi-light colour control addressed a real need. But overall retention fell from 12% to 9.6%, and Home pay rate also declined.
+**Heading:** The combined variant showed a trade-off
 
-Further cohort analysis showed 19.4% W1 retention among new users who created a Room within their first 24 hours, compared with 9.4% among those who did not. Moving Room into a harder-to-find location had affected a smaller but more valuable user group.
+During the one-month test, Quick Mode accounted for 64% of recorded Home actions. In the same variant, overall retention was 9.6%, compared with 12% in the baseline. Home pay rate decreased by 1.4%; the result was not highly significant.
 
-### The correction
+Before the test, new users who created a Room returned to use core Home controls at higher rates than users who did not: individual-light control (8.3% vs 1.6%), all-lights on/off (7.85% vs 1.66%), individual-light brightness (5.42% vs 0.98%), all-lights brightness (5.28% vs 1.08%), and colour change (6.99% vs 1.28%). The same Room-creator cohort also showed higher W1 retention (19.4% vs 9.4%). These are associations, not causal proof.
 
-**H2**  
-Keep Quick Mode. Restore Room.
+Overall use of the main core Home controls also declined in the variant. Detailed event-level comparison and statistical interpretation are pending confirmation.
 
-**Body**  
-Quick Mode was retained because its 64% share of Home actions showed that it addressed a real need. Room was restored to its visible position on Home after cohort analysis showed its value to high-retention users.
+The variant combined adding Quick Mode with moving Room into More options. It did not isolate the effect of either change. Low Room frequency alone was therefore not enough evidence to hide it in order to make Home cleaner or free space for Quick Mode.
 
-After this correction, retention stabilised back at its previous level.
+### 04 · The correction
 
-`[Final Home asset supplied in Figma node 1152:3653]`
+**Heading:** Restore Room before introducing Quick Mode
 
-### Closing
+The immediate recovery version restored Room to a visible position on Home. Quick Mode was not included in this version and was deferred to a later release.
 
-**H2**  
-High frequency and high value can coexist
+Retention returned to slightly above the 12% baseline after Room was restored. The available result supports the decision to keep Room visible, but does not prove that Room placement alone caused the recovery.
 
-**Body**  
-The lesson was not to choose between Quick Mode and Room. Frequent behaviour revealed an opportunity, while retention segmentation showed which existing experience could not be deprioritised. Using both signals led to a Home that served frequent actions without hiding a feature valuable to returning users.
+### 05 · Closing
+
+**Heading:** Frequency alone is not a prioritisation rule
+
+Quick Mode showed strong use within the test. Before the test, Room creators also returned to use every measured core Home control at higher rates and showed higher W1 retention. Because the experiment changed both Quick Mode and Room placement, these signals could not isolate a cause. The immediate decision was to restore Room on Home and defer Quick Mode, rather than use low Room frequency as the basis for hiding it.
 
 ## Role and scope
 
@@ -105,80 +90,30 @@ The lesson was not to choose between Quick Mode and Room. Frequent behaviour rev
 
 ## Asset plan
 
-### R1 — Behaviour evidence
-
-```text
-[IMAGE PLACEHOLDER — REQUIRED]
-Type: redacted analytics chart or ranked-action view.
-Show: colour change as the most-used light-control action, compared with on/off and brightness on the original Home.
-Do not show a numeric claim until it is confirmed for public use.
-Placement: “The first signal”.
-Alt text: “Original Home analytics comparing colour, on and off, and brightness controls.”
-```
-
-### R2 — User feedback evidence
-
-```text
-[IMAGE PLACEHOLDER — OPTIONAL]
-Type: redacted App Store feedback excerpt mentioning the need to change several lights’ colour together.
-Use only when it may be shared publicly.
-Placement: adjacent to R1 or in “The initial decision”.
-Alt text: “App Store feedback requesting a way to change the colour of multiple lights at once.”
-```
-
-### U1 — Home prioritisation decision
-
-```text
-[IMAGE SUPPLIED]
-Type: same-scale, cropped Home screen comparison.
-Before: Room visible as a primary section on Home.
-After: frequent controls surfaced; Room contained in More options.
-Placement: immediately after “The initial decision”.
-Alt text: “Before-and-after SmartHue Home screens showing Room moved from the main view into More options.”
-```
-
-### R3 — Test outcome and follow-up insight
-
-```text
-[IMAGE PLACEHOLDER — REQUIRED]
-Type: redacted test-result chart followed by a segmented retention view.
-Show: A/B-test results over one month—Quick Mode usage 64%, overall retention 12% to 9.6%, and W1 retention 19.4% for Room creators versus 9.4% without Room. Home pay rate declined but its exact value remains pending.
-Placement: “What the test revealed”.
-Alt text: “Test results showing declining retention and Home pay rate, alongside analysis showing high retention among Room users.”
-```
-
-### U4 — Final Home state
-
-```text
-[IMAGE SUPPLIED]
-Type: final Home UI screen.
-Source: Figma node `1152:3653`.
-Show: Quick Mode retained and Room restored to its visible position on Home.
-Placement: “Keep Quick Mode. Restore Room.”
-Alt text: “Final SmartHue Home screen with Quick Mode retained and Room restored to the primary navigation.”
-```
-
-### R4 — Recovery result
-
-```text
-[IMAGE PLACEHOLDER — OPTIONAL]
-Type: redacted retention trend.
-Show: retention stabilising back at its previous level after Room was restored to Home.
-Do not show exact numbers until confirmed for public use.
-Placement: “Keep Quick Mode. Restore Room.”
-Alt text: “Retention trend returning to its previous level after Room was restored to the SmartHue Home screen.”
-```
-
-## Cần xác nhận trước khi chốt / bàn giao dev
-
-1. Exact Home pay-rate value, nếu muốn hiển thị thành metric thay vì chỉ nêu xu hướng giảm.
-2. Exact recovery-retention value hoặc analytics screenshot, nếu muốn thay placeholder recovery trend.
-3. Analytics screenshot cho original action breakdown và App Store feedback excerpt.
+| ID | Status | Placement | Required asset and alt text |
+| --- | --- | --- | --- |
+| R1 | Placeholder | 01 · The first signal | Redacted GA4 breakdown of colour, on/off and brightness actions on original Home. Alt: `Original Home analytics comparing colour, on and off, and brightness controls.` |
+| R2 | Placeholder | 01 or 02 | Redacted App Store feedback requesting colour changes for several lights together. Alt: `App Store feedback requesting a way to change the colour of multiple lights at once.` |
+| U1 | Supplied | 02 · The initial decision | Before/test Home comparison showing Room moved into More options and Quick Mode added. Alt: `Before-and-test SmartHue Home screens showing Room moved from the main view into More options while Quick Mode was added.` |
+| R3 | Placeholder | 03 · What the test revealed | Redacted A/B retention and Home pay-rate result with metric definitions. Alt: `One-month Home test results showing baseline and variant retention and Home pay rate.` |
+| R4 | Placeholder | 03 · What the test revealed | Redacted pre-test cohort table/chart for return use of all five core controls and W1 retention. Alt: `Pre-test comparison of Room creators and non-creators returning to use core Home controls.` |
+| U2 | Placeholder | 04 · The correction | Recovery Home screen with Room visible directly on Home and no Quick Mode. Alt: `Recovery SmartHue Home screen with Room restored to the primary navigation and without Quick Mode.` |
+| R5 | Placeholder | 04 · The correction | Redacted retention trend after recovery. Alt: `Retention trend after Room was restored in the recovery version while Quick Mode was deferred.` |
 
 ## Ghi chú triển khai cho developer
 
-- Giữ public copy dưới khoảng 300–350 từ, không tính caption.
-- Không mô tả Room là bị xoá; diễn đạt đúng là Room vẫn tồn tại trong **More options** trên Home.
-- Không nói Quick Mode là multi-room control. Dữ kiện hiện có chỉ xác nhận đổi màu toàn bộ đèn cùng lúc.
-- Không trình bày việc đưa Room vào More options là giải pháp cuối cùng/thành công; đây là thay đổi được test và cho kết quả retention cùng Home pay rate giảm.
-- Các metric đã được xác nhận để hiển thị: Quick Mode 64%; retention 12% → 9.6% (−19%); W1 Room creators 19.4% so với 9.4% without Room.
+- Section order: Hero → first signal → initial decision → test result → correction → closing.
+- Keep Room described as moved into More options, never removed.
+- Do not show the current `home-final.png` as recovery evidence if it contains Quick Mode; use the U2 placeholder until the corrected visual is supplied.
+- Use a text/table presentation for R4 rather than calculating uplift, significance, or causality.
+- Do not display the core-control decline as a quantified result until event definitions, baseline/variant values, and measurement window are confirmed.
+
+## Cần xác nhận
+
+1. Definition, event list, population, and measurement window for `recorded Home actions` and the reported decline of core-control use in the variant.
+2. Retention definition, randomisation method, and significance/confidence method for the A/B test.
+3. Home pay-rate definition and whether `−1.4%` is percentage points or relative change.
+4. Sample size, period, event definitions, and statistical interpretation for the Room-creator cohort.
+5. Recovery measurement period and the exact retention value/analytics asset permitted for public use.
+6. Whether App Store feedback may be included in redacted form.
+7. A business-value definition and evidence, if `high-value` is to be used publicly.
