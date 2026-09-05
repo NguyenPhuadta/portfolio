@@ -64,7 +64,16 @@ During the one-month test, Quick Mode accounted for 64% of recorded Home actions
 
 Before the test, new users who created a Room returned to use core Home controls at higher rates than users who did not: individual-light control (8.3% vs 1.6%), all-lights on/off (7.85% vs 1.66%), individual-light brightness (5.42% vs 0.98%), all-lights brightness (5.28% vs 1.08%), and colour change (6.99% vs 1.28%). The same Room-creator cohort also showed higher W1 retention (19.4% vs 9.4%). These are associations, not causal proof.
 
-Overall use of the main core Home controls also declined in the variant. Detailed event-level comparison and statistical interpretation are pending confirmation.
+The observed key-event rate was lower for all four tracked core controls in the variant.
+
+| Core control | Baseline key-event rate | Variant A key-event rate | Relative change vs baseline |
+|---|---:|---:|---:|
+| All-lights on/off | **14%** | **12%** | **−18%** |
+| All-lights brightness | **12%** | **11%** | **−8%** |
+| Single-light brightness | **8.9%** | **8.3%** | **−6.7%** |
+| Single-light on/off | **13%** | **13%** | **−3.6%** |
+
+Rates are rounded for display. The observed pattern was directionally lower across all four tracked controls, but was not statistically conclusive.
 
 The variant combined adding Quick Mode with moving Room into More options. It did not isolate the effect of either change. Low Room frequency alone was therefore not enough evidence to hide it in order to make Home cleaner or free space for Quick Mode.
 
