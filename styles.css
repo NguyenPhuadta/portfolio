@@ -144,7 +144,12 @@ h1 { margin: 0 0 25px; font-size: 27px; line-height: 1.18; letter-spacing: -.045
 .control-room strong { color: #315e3d; font-size: 20px; line-height: 1.1; font-weight: 560; }
 .home-room-insight { position: absolute; right: 28px; bottom: 25px; padding: 10px 13px; border-radius: 99px; background: #242421; color: #fff; font-size: 12px; }
 
-.survey-cover { display: grid; place-items: center; background: var(--color-background-muted); }
+.survey-cover { display: flex; align-items: flex-end; justify-content: center; gap: 14px; overflow: hidden; padding: 34px 32px 0; background: var(--color-neutral-900); }
+.survey-cover img { width: 27%; max-width: 170px; height: auto; border-radius: 18px 18px 0 0; box-shadow: 0 18px 40px rgba(0,0,0,.22); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.survey-cover img:nth-child(2) { transform: translateY(-22px); }
+.project-card:hover .survey-cover img:first-child { transform: translateY(-8px) rotate(-1.5deg); }
+.project-card:hover .survey-cover img:nth-child(2) { transform: translateY(-30px); }
+.project-card:hover .survey-cover img:last-child { transform: translateY(-8px) rotate(1.5deg); }
 .survey-cover-label { position: absolute; top: 25px; left: 25px; padding: 8px 10px; border-radius: 99px; background: var(--color-background-surface); color: var(--color-text-secondary); font-size: 10px; }
 .survey-cover-placeholder { display: grid; place-items: center; gap: 8px; width: 72%; min-height: 238px; padding: 28px; border: 1px dashed var(--color-neutral-400); border-radius: 20px; background: var(--color-neutral-200); color: var(--color-text-secondary); text-align: center; }
 .survey-cover-placeholder span { font-size: 14px; font-weight: 600; }

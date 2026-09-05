@@ -22,23 +22,32 @@
         <p class="kicker">SmartHue · Product research</p>
         <h1>Keeping feedback close to the control experience</h1>
         <p class="dek">I designed a control-experience survey for Premium SmartHue users, simplifying its trigger so feedback stayed close to the question the team needed answered: can people control their lights easily, reliably and as intended?</p>
-        <div class="case-status" role="note"><span>Draft case study</span><p>Content structure is confirmed; UI assets are pending.</p></div>
-        <dl class="scope-list">
-          <div><dt>Role</dt><dd>Survey audience, trigger, structure and tracking strategy</dd></div>
-          <div><dt>Scope</dt><dd>UX/UI and technical factors affecting light control</dd></div>
-          <div><dt>Audience</dt><dd>Premium users</dd></div>
-        </dl>
+        <div class="case-status case-status--live" role="note"><span>Shipped to production</span><p>Data collection is in progress.</p></div>
+        <ul class="case-brief" aria-label="Case at a glance">
+          <li><span>Role</span><strong>Product Designer</strong></li>
+          <li><span>Owned</span><strong>GA4 analysis, survey UX/UI, trigger &amp; tracking</strong></li>
+          <li><span>Delivery</span><strong>Prototype, handoff &amp; build validation</strong></li>
+          <li><span>Collaboration</span><strong>PM, Engineering &amp; peer design review</strong></li>
+        </ul>
       </header>
 
       <article class="article-body case-body">
         <section class="case-section reveal">
-          <p class="section-number">01 · Core experience</p>
-          <h2>Most connected users reached light control quickly</h2>
+          <p class="section-number">01 · Product context</p>
+          <h2>After six months of shipping, it was time to listen</h2>
           <div class="copy-column">
-            <p>Before defining the survey audience, GA4 was used to check whether successfully connected users reached the core control experience. In the same session, 82.17% performed at least one light-control action. The first session averaged around 9.4 control actions per user.</p>
-            <p>These metrics were supporting evidence—not trigger rules. They indicated users could build meaningful control experience quickly.</p>
+            <ul class="case-points">
+              <li><strong>Product cycle:</strong> After six months of continuously shipping features and optimising both product and monetisation flows, the team entered the final stage of its HEART-based product cycle: understanding user Happiness.</li>
+              <li><strong>Year-end opportunity:</strong> Before prioritising the rest of the year, we needed to pause and listen—especially ahead of the festival period, when the light-control product had greater opportunity to grow.</li>
+              <li><strong>Research question:</strong> Can people control their lights easily, reliably and as intended?</li>
+            </ul>
           </div>
-          <p class="source-note">Source: GA4. No analytics screenshot is shown publicly.</p>
+          <div class="supporting-evidence" aria-label="Supporting GA4 evidence">
+            <span>Supporting evidence · GA4</span>
+            <p><strong>82.17%</strong> of successfully connected users performed at least one light-control action in the same session.</p>
+            <p>The first session averaged approximately <strong>9.4 control actions per user</strong>.</p>
+            <small>These figures confirmed exposure to the core experience; they were not used as trigger rules.</small>
+          </div>
         </section>
 
         <section class="case-section reveal">
@@ -56,29 +65,31 @@
           <div class="copy-column">
             <p>The survey targeted Premium users. They had shown greater commitment, could control lights repeatedly, and were not interrupted by the free-usage limit or paywall. This kept the feedback focused on the light-control experience rather than monetisation friction.</p>
           </div>
-          <figure class="content-placeholder" role="img" aria-label="Audience selection diagram for the SmartHue control-experience survey.">
-            <div><strong>Content image placeholder</strong><span>Simple final-audience diagram: Successfully connected users → Premium users → control-experience survey.</span></div>
-            <figcaption>Audience-selection diagram · Asset pending</figcaption>
-          </figure>
         </section>
 
         <section class="case-section reveal">
           <p class="section-number">04 · Trigger</p>
-          <h2>Session 2 after subscription</h2>
+          <h2>Session 2, after the second control action</h2>
           <div class="copy-column">
-            <p>Early trigger ideas relied on multiple rules, such as numbers of control actions, repeat sessions, anti-spam timing, safe actions and fallback logic. That logic became more complex than the research goal.</p>
-            <p>The final rule was deliberately simple: show the survey in the user’s second session after subscription. By then, the user had enough control experience, was past the free limit, and could still recall the early premium experience.</p>
+            <ul class="case-points">
+              <li><strong>Eligible audience:</strong> Premium users in their second session after purchase.</li>
+              <li><strong>Automatic trigger:</strong> Show the survey after the second qualifying light-control action in that session.</li>
+              <li><strong>Qualifying actions:</strong> On/Off, Brightness or Color.</li>
+              <li><strong>No automatic fallback:</strong> If the condition is not met before the user leaves, do not trigger the survey in Session 3.</li>
+              <li><strong>Voluntary access:</strong> Keep the survey available in Settings so users can share feedback at any time.</li>
+            </ul>
           </div>
           <ol class="trigger-sequence" aria-label="Survey trigger sequence">
             <li>User purchases subscription</li>
-            <li>Session 1 after purchase</li>
-            <li>Uses SmartHue normally</li>
             <li>Session 2 after purchase</li>
-            <li>Show control-experience survey</li>
+            <li>First qualifying control action</li>
+            <li>Second qualifying control action</li>
+            <li>Show the survey</li>
           </ol>
-          <figure class="content-placeholder" role="img" aria-label="Survey trigger shown in the user’s second session after purchase.">
-            <div><strong>Content image placeholder</strong><span>Survey-trigger flow or final trigger-logic screenshot.</span></div>
-            <figcaption>Trigger logic · Asset pending</figcaption>
+          <p class="trigger-boundary"><strong>Boundary:</strong> No automatic Session 3 fallback · Survey remains available in Settings</p>
+          <figure class="settings-entry-visual">
+            <div><img src="./assets/smarthue/survey-settings-entry.png" alt="SmartHue Settings entry inviting a Premium user to take a short control-experience survey." /></div>
+            <figcaption><span>Voluntary path</span><strong>Feedback remains available in Settings</strong><p>Users can open the same survey themselves, even when the automatic trigger condition is not met.</p></figcaption>
           </figure>
         </section>
 
@@ -86,30 +97,35 @@
           <p class="section-number">05 · Survey structure</p>
           <h2>One survey, two diagnostic paths</h2>
           <div class="copy-column">
-            <p>The first question asks how easy light control has been, on a five-point scale. Ratings 4–5 enter the Happy flow; ratings 1–3 enter the Not Happy flow.</p>
-            <p>The Happy flow identifies what worked well and which feature users want next. The Not Happy flow identifies the main difficulty, what users did next, and their feature request. Both flows accept free-text feedback through <code>Other</code>.</p>
+            <p>Users slide from Very Hard to Very Easy to rate their control experience. Ratings 4–5 enter the Happy path; ratings 1–3 enter the Not Happy path.</p>
+            <p>Both diagnostic questions include <code>Other</code>, which opens a free-text field.</p>
           </div>
-          <div class="table-scroll" tabindex="0" aria-label="Survey flow content table">
-            <table>
-              <thead><tr><th>Step</th><th>Happy flow</th><th>Not Happy flow</th></tr></thead>
-              <tbody>
-                <tr><th>Q1</th><td>How easy has it been to control your lights so far? (1 = Very difficult, 5 = Very easy)</td><td>Same entry question</td></tr>
-                <tr><th>Q2</th><td>What worked well?</td><td>What caused the most difficulty?</td></tr>
-                <tr><th>Q3</th><td>What feature would you like us to add next?</td><td>What did you do next?</td></tr>
-                <tr><th>Q4</th><td>—</td><td>What feature would you like us to add next?</td></tr>
-              </tbody>
-            </table>
+          <div class="branch-summary">
+            <section><span>Ratings 4–5</span><h3>Happy path</h3><ul class="case-points"><li><strong>Diagnose:</strong> Which controls worked well for you?</li><li><strong>Look forward:</strong> What feature would you like us to add next?</li></ul></section>
+            <section><span>Ratings 1–3</span><h3>Not Happy path</h3><ul class="case-points"><li><strong>Diagnose:</strong> What was the biggest difficulty you had?</li><li><strong>Check the outcome:</strong> Were you eventually able to control your lights as intended?</li></ul></section>
           </div>
-          <div class="survey-options">
-            <div><h3>Positive drivers</h3><p>Understand light status; Turn On/Off; Change brightness; Change light color; Visual design; Fast response; Stable connection; Reliable control; Other.</p></div>
-            <div><h3>Main difficulties</h3><p>Finding the right light; Turning lights on and off; Adjusting brightness or color; Visual design; Slow response; Connection problems; Controls not working as expected; Other.</p></div>
-            <div><h3>Recovery behaviours</h3><p>Tried again; Waited for a response; Reopened the app; Reconnected the light; Used another control method; Couldn’t complete the task.</p></div>
-            <div><h3>Feature-demand options</h3><p>Control from anywhere; Alexa; Siri / Apple Intelligence; Automations; Scenes &amp; effects; Widgets; Other.</p></div>
-          </div>
-          <figure class="content-placeholder" role="img" aria-label="SmartHue control-experience survey branching from an ease rating into Happy and Not Happy paths.">
-            <div><strong>Content image placeholder</strong><span>Happy / Not Happy survey branching flow, including key question screens.</span></div>
-            <figcaption>Survey branching flow · Asset pending</figcaption>
+          <figure class="survey-entry-screen">
+            <div><img src="./assets/smarthue/survey-rating.png" alt="SmartHue survey screen asking users to slide from Very Hard to Very Easy to rate their control experience." /></div>
+            <figcaption><span>Shared entry</span><strong>Rate the control experience</strong><p>The selected rating determines which diagnostic path follows.</p></figcaption>
           </figure>
+          <div class="survey-branch-grid">
+            <section class="survey-branch">
+              <header><span>Ratings 4–5</span><h3>Happy path</h3></header>
+              <div class="survey-screen-flow">
+                <figure><img src="./assets/smarthue/survey-happy-controls.png" alt="Survey screen asking which light controls worked well." /><figcaption>Identify positive drivers</figcaption></figure>
+                <i aria-hidden="true">→</i>
+                <figure><img src="./assets/smarthue/survey-happy-feature.png" alt="Survey screen asking which feature the user would like SmartHue to add next." /><figcaption>Capture feature demand</figcaption></figure>
+              </div>
+            </section>
+            <section class="survey-branch">
+              <header><span>Ratings 1–3</span><h3>Not Happy path</h3></header>
+              <div class="survey-screen-flow">
+                <figure><img src="./assets/smarthue/survey-not-happy-difficulty.png" alt="Survey screen asking about the user's biggest difficulty when controlling lights." /><figcaption>Locate the difficulty</figcaption></figure>
+                <i aria-hidden="true">→</i>
+                <figure><img src="./assets/smarthue/survey-not-happy-outcome.png" alt="Survey screen asking whether the user was eventually able to control their lights as intended." /><figcaption>Check the control outcome</figcaption></figure>
+              </div>
+            </section>
+          </div>
         </section>
 
         <section class="case-section reveal">
@@ -117,7 +133,7 @@
           <h2>Keep measurement focused</h2>
           <div class="copy-column">
             <p>Tracking captures progression points rather than each individual chip tap: <code>survey_view</code>, <code>click_continue_button</code>, <code>click_submit_button</code> and <code>click_close_button</code>.</p>
-            <p>Key parameters include rating, path, selected factor, recovery action, feature request, step, connection type and trigger context. Free-text <code>Other</code> is stored as a string parameter for review in a backend, BigQuery or feedback system—not as a standard GA4 custom dimension because its cardinality is high.</p>
+            <p>Key parameters include rating, path, selected factor, control outcome, feature request, step, connection type and trigger context. Free-text <code>Other</code> is stored as a string parameter for review in a backend, BigQuery or feedback system—not as a standard GA4 custom dimension because its cardinality is high.</p>
           </div>
         </section>
 
@@ -125,20 +141,20 @@
           <p class="section-number">07 · Measurement plan</p>
           <h2>Turn feedback into product signals</h2>
           <div class="copy-column">
-            <p>Post-launch, the team can monitor survey completion, dismissal and step drop-off; average ease score, Happy rate and Not Happy rate; positive drivers, pain points and recovery behaviours; and feature demand.</p>
-            <p>Responses can be broken down by Philips Hue, LIFX, Tuya and Matter. Feature demand can also be compared between Happy and Not Happy respondents, separating requests for expanded capability from possible workarounds for a poor experience.</p>
+            <p>With the survey live, the team is collecting data on completion, dismissal and step drop-off; average ease score, Happy rate and Not Happy rate; positive drivers, pain points, control outcomes and feature demand.</p>
+            <p>Responses can be broken down by Philips Hue, LIFX, Tuya and Matter. Feature demand comes from Happy respondents; the Not Happy path measures whether users eventually achieved the intended control outcome.</p>
           </div>
           <div class="metric-list" aria-label="Measurement definitions">
             <section><h3>Survey health</h3><p><code>Completion rate = survey_submit / survey_view</code><br /><code>Dismiss rate = survey_close / survey_view</code><br /><code>Step drop-off = users reaching each survey step</code></p></section>
             <section><h3>Control experience</h3><p><code>Average ease score = AVG(rating_value)</code><br /><code>Happy rate = ratings 4–5 / total responses</code><br /><code>Not Happy rate = ratings 1–3 / total responses</code></p></section>
-            <section><h3>Diagnostic signals</h3><p>Positive-driver distribution<br />Pain-point distribution<br />Recovery-behaviour distribution<br />Feature-demand distribution</p></section>
+            <section><h3>Diagnostic signals</h3><p>Positive-driver distribution<br />Pain-point distribution<br />Control-outcome distribution<br />Feature-demand distribution</p></section>
           </div>
         </section>
 
         <section class="case-section closing-section reveal">
           <p class="section-number">08 · Learning</p>
-          <h2>The trigger should serve the research goal</h2>
-          <p>The key learning was to stop optimising behavioural-trigger logic when it began to drift away from the research goal. A simpler trigger—Session 2 after subscription—created a cleaner sample and a simpler implementation while keeping the feedback relevant to early premium light control.</p>
+          <h2>The trigger now serves the research goal</h2>
+          <p>The production release uses a measurable trigger tied to actual light-control use, while keeping voluntary feedback available in Settings. Data collection is still in progress, so this case does not yet claim an impact on response quality or control behaviour.</p>
         </section>
       </article>
 
