@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./project.css?v=20260902-connection2" />
-    <link rel="stylesheet" href="./smarthue.css?v=20260903-connection3" />
+    <link rel="stylesheet" href="./smarthue.css?v=20260905-funnel-cards" />
     <link rel="stylesheet" href="../tokens.css?v=20260902-colors1" />
   </head>
   <body class="smarthue-page">
@@ -136,9 +136,27 @@
               <li><strong>Interpretation</strong> The post-launch pattern is consistent with a less interrupted path after device discovery; the before–after comparison alone does not establish causation.</li>
             </ul>
           </div>
-          <div class="qualitative-outcomes">
-            <div><span>BLE · scan to success</span><strong>18.46% → 25.5%</strong><small><strong>+7.04 percentage points</strong> · <strong>+38% relative increase</strong></small></div>
-            <div><span>Bridge · scan to success</span><strong>24.05% → 28.1%</strong><small><strong>+4.05 percentage points</strong> · <strong>+17% relative increase</strong></small></div>
+          <div class="funnel-results" aria-label="Post-launch scan-to-success results">
+            <section class="funnel-result" aria-labelledby="ble-result-title">
+              <div class="funnel-result__header">
+                <h3 id="ble-result-title">BLE</h3>
+                <span class="funnel-result__lift">↗ +38% <span>relative increase</span></span>
+              </div>
+              <p class="funnel-result__label">Scan to success</p>
+              <p class="funnel-result__value">25.5<span>%</span></p>
+              <p class="funnel-result__baseline">Up from <span>18.46%</span> before launch</p>
+              <p class="funnel-result__footer"><strong>+7.04</strong> percentage points</p>
+            </section>
+            <section class="funnel-result" aria-labelledby="bridge-result-title">
+              <div class="funnel-result__header">
+                <h3 id="bridge-result-title">Bridge</h3>
+                <span class="funnel-result__lift">↗ +17% <span>relative increase</span></span>
+              </div>
+              <p class="funnel-result__label">Scan to success</p>
+              <p class="funnel-result__value">28.1<span>%</span></p>
+              <p class="funnel-result__baseline">Up from <span>24.05%</span> before launch</p>
+              <p class="funnel-result__footer"><strong>+4.05</strong> percentage points</p>
+            </section>
           </div>
         </section>
 
