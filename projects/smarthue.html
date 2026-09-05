@@ -36,14 +36,25 @@
           <div class="copy-column">
             <ul class="case-points">
               <li><strong>Signal:</strong> GA4 located drop-off after device discovery, when users reviewed a device list and tapped <code>Connect</code>.</li>
-              <li><strong>Legacy funnel evidence:</strong> For Bridge, <strong>64.57%</strong> of users who reached <code>FoundDeviceScr_Show</code> then reached the success screen (<strong>24.05%</strong> from scan). For BLE, the figures were <strong>42.94%</strong> and <strong>18.46%</strong> respectively.</li>
-              <li><strong>Extra step:</strong> In the previous Bridge flow, tapping <code>Connect</code> was followed by pressing the physical button on the Bridge.</li>
               <li><strong>Limitation:</strong> The data located the drop-off but did not explain why users left; the role of manual selection was not verified with user research.</li>
             </ul>
           </div>
-          <figure class="legacy-flow" aria-label="Previous connection flow; this diagram explains the flow and is not analytics evidence.">
-            <figcaption><strong>Previous flow</strong></figcaption>
-            <div class="flow-steps"><span>Start scan</span><i>→</i><span>Device list</span><i>→</i><span class="friction-step">Tap Connect</span><i>→</i><span class="required-step">Press Bridge button</span><i>→</i><span>Connection</span></div>
+          <figure class="legacy-flow" aria-label="Previous Bridge and Hue BLE Light connection flows; these diagrams explain the journeys and are not analytics evidence.">
+            <figcaption><strong>Previous flows by device type</strong></figcaption>
+            <section class="legacy-path" aria-labelledby="legacy-bridge-title">
+              <div class="legacy-path__header">
+                <h3 id="legacy-bridge-title">Bridge</h3>
+                <p><strong>64.57%</strong> found-to-success · <strong>24.05%</strong> scan-to-success</p>
+              </div>
+              <div class="flow-steps"><span>Start scan</span><i>→</i><span>Device list</span><i>→</i><span class="friction-step">Tap Connect</span><i>→</i><span class="required-step">Press Bridge button</span><i>→</i><span>Connection</span></div>
+            </section>
+            <section class="legacy-path" aria-labelledby="legacy-ble-title">
+              <div class="legacy-path__header">
+                <h3 id="legacy-ble-title">Hue BLE Light</h3>
+                <p><strong>42.94%</strong> found-to-success · <strong>18.46%</strong> scan-to-success</p>
+              </div>
+              <div class="flow-steps"><span>Start scan</span><i>→</i><span>Device list</span><i>→</i><span class="friction-step">Tap Connect</span><i>→</i><span>Connection</span></div>
+            </section>
           </figure>
         </section>
 
@@ -55,9 +66,10 @@
         </section>
 
         <section class="case-section reveal">
-          <p class="section-number">03 · Before and after</p>
-          <h2>From a device list to direct connection</h2>
-          <p class="section-intro">The redesigned journey removed the device list after discovery. For Bridge, the user moves directly to the physical action required to complete connection.</p>
+          <p class="section-number">03 · Design solution</p>
+          <h2>How the solution adapts by device type</h2>
+          <p class="section-intro">Both journeys remove manual device selection after discovery. What happens next depends on the connection method.</p>
+          <h3 class="device-heading">Bridge</h3>
           <div class="flow-comparison before-after-comparison">
             <figure class="before-after-column before-after-column--before">
               <div class="before-after-stage before-after-stage--before">
@@ -96,27 +108,30 @@
               </figcaption>
             </figure>
           </div>
-        </section>
-
-        <section class="case-section automation-section reveal">
-          <div class="automation-copy">
-            <p class="section-number">04 · Clear feedback</p>
-            <h2>Connection feedback designed around engineering states</h2>
-            <ul class="case-points"><li><strong>Visible feedback:</strong> The UI shows the model currently being connected, such as <code>Hue color lamp</code>.</li><li><strong>Multiple lights:</strong> The shipped flow connects lights in detection order, keeping progress visible without repeated manual selection.</li><li><strong>System states:</strong> The interface translates connection states supplied by Engineering into a user-facing journey.</li></ul>
-          </div>
-          <figure class="single-screen">
-            <div class="screen-stage">
-              <div class="connecting-feedback-screen">
-                <span>Connecting to device</span>
-                <img src="./assets/smarthue/ble-connecting-feedback.png" alt="SmartHue automatic connection screen for Hue color lamp." />
-              </div>
+          <div class="ble-solution">
+            <div class="ble-solution__copy">
+              <p class="device-kicker">Hue BLE Light</p>
+              <h3>From discovery to automatic connection</h3>
+              <ul class="case-points">
+                <li><strong>Direct path:</strong> Once a supported light is found, SmartHue starts connecting without showing the previous device-selection list.</li>
+                <li><strong>Visible feedback:</strong> The screen names the model currently being connected, such as <code>Hue color lamp</code>.</li>
+                <li><strong>Multiple lights:</strong> The shipped flow connects detected lights sequentially without repeated manual selection.</li>
+              </ul>
             </div>
-            <figcaption>Automatic connection with visible device-model feedback.</figcaption>
-          </figure>
+            <figure class="single-screen ble-solution__visual">
+              <div class="screen-stage">
+                <div class="connecting-feedback-screen">
+                  <span>Automatic connection</span>
+                  <img src="./assets/smarthue/ble-connecting.png" alt="Redesigned SmartHue BLE flow automatically connecting to a Hue color lamp after discovery." />
+                </div>
+              </div>
+              <figcaption>Manual device selection removed after discovery.</figcaption>
+            </figure>
+          </div>
         </section>
 
         <section class="case-section outcome-section reveal">
-          <p class="section-number">05 · A/B test outcome</p>
+          <p class="section-number">04 · A/B test outcome</p>
           <h2>Results from the A/B test</h2>
           <div class="copy-column"><p>In the A/B test, the auto-connect variant was compared with the baseline flow. The experiment observed higher rates of users reaching the connection-success screen and making an in-app purchase.</p></div>
           <div class="qualitative-outcomes">
@@ -126,7 +141,7 @@
         </section>
 
         <section class="case-section reveal">
-          <p class="section-number">06 · Post-launch funnel performance</p>
+          <p class="section-number">05 · Post-launch funnel performance</p>
           <h2>More users completed connection after discovery</h2>
           <div class="copy-column">
             <ul class="case-points">
@@ -162,7 +177,7 @@
 
         <section class="case-section reveal">
           <div class="closing-grid">
-            <div><p class="section-number">07 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul class="case-points"><li><strong>Completion:</strong> Keep users in the connection journey until every detected device has completed connection, then take them to light controls.</li><li><strong>Recovery:</strong> Add a factory-reset state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
+            <div><p class="section-number">06 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul class="case-points"><li><strong>Completion:</strong> Keep users in the connection journey until every detected device has completed connection, then take them to light controls.</li><li><strong>Recovery:</strong> Add a factory-reset state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
             <aside class="future-note"><strong>Future proposal</strong><p>These directions are not shipped work or reported outcomes.</p></aside>
           </div>
         </section>

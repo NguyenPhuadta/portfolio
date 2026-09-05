@@ -105,6 +105,7 @@ h1 { margin: 0 0 25px; font-size: 27px; line-height: 1.18; letter-spacing: -.045
 .project-card:focus-visible .cover { box-shadow: 0 0 0 3px var(--accent), var(--shadow); }
 .cover { height: 470px; border-radius: 30px; position: relative; overflow: hidden; transform: translateZ(0); transition: transform .55s cubic-bezier(.2,.8,.2,1); box-shadow: 0 1px 0 rgba(255,255,255,.8) inset, 0 0 0 1px rgba(20,20,18,.05); }
 .project-cover-placeholder { background: var(--color-background-muted); box-shadow: none; }
+.project-cover-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .project-card:hover .cover { transform: scale(1.025); }
 .project-meta { display: flex; justify-content: space-between; gap: 22px; align-items: flex-start; min-width: 0; padding: 14px 2px 0; }
 .project-meta > div { min-width: 0; }

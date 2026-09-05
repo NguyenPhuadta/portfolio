@@ -26,21 +26,23 @@ target_page: "projects/smarthue.html"
 
 ### The problem
 
-Connecting a light was a critical first step in SmartHue. For Bridge and Hue BLE Light, GA4 showed drop-off after devices were found, in the part of the flow where users reviewed a device list and tapped `Connect`. The data located the drop-off; it did not explain why users left the journey.
+Connecting a light was a critical first step in SmartHue. For both Bridge and Hue BLE Light, GA4 showed drop-off after devices were found, where users reviewed a device list and tapped `Connect`.
 
-The existing flow also required users to recover when no light was found. Whether the additional selection step itself increased connection time or caused drop-off was not verified with user research.
+- **Bridge:** 64.57% of users who reached the device-found screen continued to success; scan-to-success was 24.05%. The previous journey then required users to press the physical Bridge button after tapping `Connect`.
+- **Hue BLE Light:** 42.94% of users who reached the device-found screen continued to success; scan-to-success was 18.46%. The previous journey asked users to select a found light before connection continued.
+
+The data located the drop-off; it did not explain why users left, and the role of manual selection was not verified with user research.
 
 ### From data to a product decision
 
 I reviewed the connection funnel in GA4 and proposed removing the manual-selection step after discovery. Users still start a scan with `Scan Now`. When SmartHue finds a supported device, the proposed journey moves directly into connection; the engineering implementation provides the underlying discovery and connection behaviour.
 
-### Designing around the system
+### How the solution adapts by device type
 
 Engineering provided the technical states that the connection process could support. I used those states to shape the user journey.
 
-For Bridge, the flow moves from discovery to the required physical action: pressing the button on the Bridge. For Hue BLE Light, the interface shows the model currently being connected, such as `Hue color lamp`. When more than one light is found, SmartHue connects lights one at a time in detection order, avoiding repeated manual selection while keeping progress visible.
-
-The flow also includes clear recovery paths for no device found and connection timeout, both with a `Try Again` action.
+- **Bridge:** discovery moves directly to the required physical action: pressing the button on the Bridge.
+- **Hue BLE Light:** once a supported light is found, SmartHue starts connecting without showing the previous device-selection list. The interface names the model currently being connected, such as `Hue color lamp`. When more than one light is found, SmartHue connects lights sequentially without repeated manual selection.
 
 ### A/B test outcome
 
@@ -137,8 +139,9 @@ The friction was particularly relevant when two, three or more lights were invol
 #### Evidence
 
 - Source: GA4
+- Bridge: 64.57% device-found-to-success and 24.05% scan-to-success.
+- Hue BLE Light: 42.94% device-found-to-success and 18.46% scan-to-success.
 - Finding: GA4 located drop-off after device discovery, where users reviewed a device list and selected a light.
-- Exact drop-off rate, funnel definition, time period and baseline: pending confirmation.
 
 #### Developer notes
 
@@ -193,7 +196,10 @@ The failure experience followed the technical states provided by Engineering. Th
 #### Developer notes
 
 - Suggested component: `flow-comparison`
-- Recommended visual order: old flow on the left, automatic flow on the right.
+- Present Bridge and Hue BLE Light as separate, equally visible device paths.
+- For the problem section, show two labeled explanatory diagrams: `Start scan → Device list → Tap Connect → Press Bridge button → Connection` for Bridge, and `Start scan → Device list → Tap Connect → Connection` for Hue BLE Light.
+- Keep the approved Before/After comparison for Bridge: old flow on the left, automatic flow on the right.
+- Follow it with a separate Hue BLE Light solution block using the `Connecting to Hue color lamp` screen and the sequence `Device found → Automatic connection`.
 - Highlight the removed manual-selection step rather than inventing a complete screen-by-screen sequence.
 - Suggested accessible summary: “The redesigned flow removes manual device selection by detecting and connecting to a device automatically.”
 - For multiple lights, visualize the connection as a sequence ordered by device detection.
@@ -270,7 +276,7 @@ Compared matching three-month windows before and after automatic connection was 
 | ID | Asset | Placement | Content requirement | Developer note |
 | --- | --- | --- | --- | --- |
 | R1 | GA4 funnel or chart | Problem | Show the connection funnel and annotate the drop-off after device discovery. Redact anything confidential. | Use as the primary evidence asset; annotate the selection step rather than adding unsupported numbers. |
-| R2 | Simplified old-flow diagram | Immediately below R1 | `Start scan → device list → tap Connect → press the physical Bridge button → connection` | Build this as an accessible HTML/CSS diagram if the GA4 image cannot be published. It is explanatory, not a substitute for R1. |
+| R2 | Simplified old-flow diagrams | Problem section | Bridge: `Start scan → device list → tap Connect → press the physical Bridge button → connection`. Hue BLE Light: `Start scan → device list → tap Connect → connection`. | Build as two clearly labeled accessible HTML/CSS diagrams. They explain the journeys and are not analytics evidence. |
 
 ### UI assets — include
 
@@ -279,8 +285,7 @@ Compared matching three-month windows before and after automatic connection was 
 | U1 | Old Bridge device-list screen | Before/after comparison, left | The clearest evidence of the removed step: `Device Found: 12`, available devices, and a `Connect` action per device. | [Old Bridge flow](https://www.figma.com/design/950Ol2o3VBJVcbBffiYASR/Storage?node-id=1-1823&t=SxUqqhsg2Qc57xxh-4) |
 | U1b | Old Bridge physical-button screen | Before/after comparison, left, immediately after U1 | Confirms that tapping `Connect` was followed by another required step: pressing the physical button on the Bridge. | User-supplied screenshot |
 | U2 | New Bridge `Press The Button` state | Before/after comparison, right | The direct counterpart to U1: after discovery, the user moves to the required physical Bridge action without a device list. | [New Bridge flow](https://www.figma.com/design/mklhEcafiTfj9FoGIUhA0M/SmartHue---HuyHL-PhuNH?node-id=21203-21243&t=nfHg1UUOTrsPesPB-4) |
-| U3 | New BLE `Connecting to Hue color lamp` screen | Device-identification callout | Shows automatic connection in the BLE path and the visible device model name. | [New BLE flow](https://www.figma.com/design/mklhEcafiTfj9FoGIUhA0M/SmartHue---HuyHL-PhuNH?node-id=21203-21242&t=nfHg1UUOTrsPesPB-4) |
-| U4 | New BLE `No Light Found` and `Connection Timed Out` screens | Resilience/edge-state strip | Shows the recovery paths supplied by Engineering and expressed in the UI. Use as a two-screen strip, not full-sized screens. | [New BLE flow](https://www.figma.com/design/mklhEcafiTfj9FoGIUhA0M/SmartHue---HuyHL-PhuNH?node-id=21203-21242&t=nfHg1UUOTrsPesPB-4) |
+| U3 | New BLE `Connecting to Hue color lamp` screen | Hue BLE Light solution block, after the Bridge comparison | Shows automatic connection in the BLE path and the visible device model name. | [New BLE flow](https://www.figma.com/design/mklhEcafiTfj9FoGIUhA0M/SmartHue---HuyHL-PhuNH?node-id=21203-21242&t=nfHg1UUOTrsPesPB-4) |
 | U5 | New success screen — choose either Bridge or Hue Light | Outcome | Visually closes the story. Crop before the paywall if feasible, because monetization is not part of this case. | New Bridge or BLE flow |
 
 ### UI assets — do not include in the main story
