@@ -16,8 +16,8 @@ target_page: "projects/smarthue-home-room.html"
 - In the original Home, changing colour was the most-used light-control action, ahead of on/off and brightness. App Store feedback requested changing the colour of several lights at once.
 - The one-month A/B test combined two changes: Quick Mode was added to change the colour of all lights at once, and Room moved from Home into More options.
 - Quick Mode accounted for 64% of recorded Home actions during the test.
-- Overall retention was 12% in the 235-user baseline and 9.6% in the 228-user Variant A.
-- Home pay rate decreased by 1.4% during the test; the result was not highly significant.
+- D1 retention was 12% in the 235-user baseline and 9.6% in the 228-user Variant A.
+- The Home-banner in-app purchase rate decreased by 1.4 percentage points during the test.
 - New users who created a Room within 24 hours had W1 retention of 19.4%, compared with 9.4% among users who did not.
 - Before the test, Room creators returned to use every measured core Home control at higher rates than non-creators.
 - User reports that overall use of the main core controls declined in the test; detailed event-level values are pending.
@@ -60,7 +60,7 @@ The test variant added Quick Mode so users could change the colour of all lights
 
 **Heading:** The combined variant showed a trade-off
 
-During the one-month test, Quick Mode accounted for 64% of recorded Home actions. In the same variant, overall retention was 9.6%, compared with 12% in the baseline. Home pay rate decreased by 1.4%; the result was not highly significant.
+During the one-month test, Quick Mode accounted for 64% of recorded Home actions. In the same variant, D1 retention was 9.6%, compared with 12% in the baseline. The Home-banner in-app purchase rate decreased by 1.4 percentage points during the test.
 
 Before the test, new users who created a Room returned to use core Home controls at higher rates than users who did not: individual-light control (8.3% vs 1.6%), all-lights on/off (7.85% vs 1.66%), individual-light brightness (5.42% vs 0.98%), all-lights brightness (5.28% vs 1.08%), and colour change (6.99% vs 1.28%). The same Room-creator cohort also showed higher W1 retention (19.4% vs 9.4%). These are associations, not causal proof.
 
@@ -95,7 +95,7 @@ Quick Mode showed strong use within the test. Before the test, Room creators als
 | R1 | Placeholder | 01 · The first signal | Redacted GA4 breakdown of colour, on/off and brightness actions on original Home. Alt: `Original Home analytics comparing colour, on and off, and brightness controls.` |
 | R2 | Placeholder | 01 or 02 | Redacted App Store feedback requesting colour changes for several lights together. Alt: `App Store feedback requesting a way to change the colour of multiple lights at once.` |
 | U1 | Supplied | 02 · The initial decision | Before/test Home comparison showing Room moved into More options and Quick Mode added. Alt: `Before-and-test SmartHue Home screens showing Room moved from the main view into More options while Quick Mode was added.` |
-| R3 | Placeholder | 03 · What the test revealed | Redacted A/B retention and Home pay-rate result with metric definitions. Alt: `One-month Home test results showing baseline and variant retention and Home pay rate.` |
+| R3 | Placeholder | 03 · What the test revealed | Redacted A/B D1 retention and Home-banner in-app purchase-rate result with metric definitions. Alt: `One-month Home test results showing baseline and variant D1 retention and Home-banner in-app purchase rate.` |
 | R4 | Placeholder | 03 · What the test revealed | Redacted pre-test cohort table/chart for return use of all five core controls and W1 retention. Alt: `Pre-test comparison of Room creators and non-creators returning to use core Home controls.` |
 | U2 | Placeholder | 04 · The correction | Recovery Home screen with Room visible directly on Home and no Quick Mode. Alt: `Recovery SmartHue Home screen with Room restored to the primary navigation and without Quick Mode.` |
 | R5 | Placeholder | 04 · The correction | Redacted retention trend after recovery. Alt: `Retention trend after Room was restored in the recovery version while Quick Mode was deferred.` |
@@ -111,8 +111,7 @@ Quick Mode showed strong use within the test. Before the test, Room creators als
 ## Cần xác nhận
 
 1. Definition, event list, population, and measurement window for `recorded Home actions` and the reported decline of core-control use in the variant.
-2. Retention definition, randomisation method, and significance/confidence method for the A/B test.
-3. Home pay-rate definition and whether `−1.4%` is percentage points or relative change.
+2. Randomisation method and significance/confidence method for the A/B test.
 4. Sample size, period, event definitions, and statistical interpretation for the Room-creator cohort.
 5. Recovery measurement period and the exact retention value/analytics asset permitted for public use.
 6. Whether App Store feedback may be included in redacted form.

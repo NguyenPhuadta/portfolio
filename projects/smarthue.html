@@ -35,10 +35,10 @@
           <h2>GA4 showed drop-off after device discovery</h2>
           <div class="copy-column">
             <ul class="case-points">
-              <li><strong>Signal</strong> GA4 located drop-off after device discovery, when users reviewed a device list and tapped <code>Connect</code>.</li>
-              <li><strong>Legacy funnel evidence</strong> For Bridge, <strong>64.57%</strong> of users who reached <code>FoundDeviceScr_Show</code> then reached the success screen (<strong>24.05%</strong> from scan). For BLE, the figures were <strong>42.94%</strong> and <strong>18.46%</strong> respectively.</li>
-              <li><strong>Extra step</strong> In the previous Bridge flow, tapping <code>Connect</code> was followed by pressing the physical button on the Bridge.</li>
-              <li><strong>Limitation</strong> The data located the drop-off but did not explain why users left; the role of manual selection was not verified with user research.</li>
+              <li><strong>Signal:</strong> GA4 located drop-off after device discovery, when users reviewed a device list and tapped <code>Connect</code>.</li>
+              <li><strong>Legacy funnel evidence:</strong> For Bridge, <strong>64.57%</strong> of users who reached <code>FoundDeviceScr_Show</code> then reached the success screen (<strong>24.05%</strong> from scan). For BLE, the figures were <strong>42.94%</strong> and <strong>18.46%</strong> respectively.</li>
+              <li><strong>Extra step:</strong> In the previous Bridge flow, tapping <code>Connect</code> was followed by pressing the physical button on the Bridge.</li>
+              <li><strong>Limitation:</strong> The data located the drop-off but did not explain why users left; the role of manual selection was not verified with user research.</li>
             </ul>
           </div>
           <figure class="legacy-flow" aria-label="Previous connection flow; this diagram explains the flow and is not analytics evidence.">
@@ -50,7 +50,7 @@
         <section class="case-section reveal">
           <p class="section-number">02 · From data to a product decision</p>
           <h2>A proposal to reduce manual selection after discovery</h2>
-          <div class="copy-column"><ul class="case-points"><li><strong>Decision</strong> I proposed removing the manual-selection step after discovery.</li><li><strong>User control</strong> Users still start a scan with <code>Scan Now</code>.</li><li><strong>Collaboration</strong> Once a supported device is found, the flow moves into connection; Engineering implements the underlying discovery and connection behaviour.</li></ul></div>
+          <div class="copy-column"><ul class="case-points"><li><strong>Decision:</strong> I proposed removing the manual-selection step after discovery.</li><li><strong>User control:</strong> Users still start a scan with <code>Scan Now</code>.</li><li><strong>Collaboration:</strong> Once a supported device is found, the flow moves into connection; Engineering implements the underlying discovery and connection behaviour.</li></ul></div>
           <div class="decision-sequence" aria-label="Decision sequence"><span>GA4 finding</span><i>→</i><span>Remove manual selection</span><i>→</i><span>Automatic connection</span></div>
         </section>
 
@@ -102,7 +102,7 @@
           <div class="automation-copy">
             <p class="section-number">04 · Clear feedback</p>
             <h2>Connection feedback designed around engineering states</h2>
-            <ul class="case-points"><li><strong>Visible feedback</strong> The UI shows the model currently being connected, such as <code>Hue color lamp</code>.</li><li><strong>Multiple lights</strong> The shipped flow connects lights in detection order, keeping progress visible without repeated manual selection.</li><li><strong>System states</strong> The interface translates connection states supplied by Engineering into a user-facing journey.</li></ul>
+            <ul class="case-points"><li><strong>Visible feedback:</strong> The UI shows the model currently being connected, such as <code>Hue color lamp</code>.</li><li><strong>Multiple lights:</strong> The shipped flow connects lights in detection order, keeping progress visible without repeated manual selection.</li><li><strong>System states:</strong> The interface translates connection states supplied by Engineering into a user-facing journey.</li></ul>
           </div>
           <figure class="single-screen">
             <div class="screen-stage">
@@ -130,10 +130,10 @@
           <h2>More users completed connection after discovery</h2>
           <div class="copy-column">
             <ul class="case-points">
-              <li><strong>Measurement</strong> Compared matching <strong>three-month</strong> windows before and after automatic connection was applied. The initial funnel event represents the same connection-flow entry point in both periods.</li>
-              <li><strong>BLE</strong> Scan-to-success increased from <strong>18.46%</strong> to <strong>25.5%</strong>. Among users who found a device, the rate reaching success increased from <strong>42.94%</strong> to <strong>46.57%</strong>.</li>
-              <li><strong>Bridge</strong> Scan-to-success increased from <strong>24.05%</strong> to <strong>28.1%</strong>. Among users who found a device, the rate reaching success increased from <strong>64.57%</strong> to <strong>77.97%</strong>.</li>
-              <li><strong>Interpretation</strong> The post-launch pattern is consistent with a less interrupted path after device discovery; the before–after comparison alone does not establish causation.</li>
+              <li><strong>Measurement:</strong> Compared matching <strong>three-month</strong> windows before and after automatic connection was applied. The initial funnel event represents the same connection-flow entry point in both periods.</li>
+              <li><strong>BLE:</strong> Scan-to-success increased from <strong>18.46%</strong> to <strong>25.5%</strong>. Among users who found a device, the rate reaching success increased from <strong>42.94%</strong> to <strong>46.57%</strong>.</li>
+              <li><strong>Bridge:</strong> Scan-to-success increased from <strong>24.05%</strong> to <strong>28.1%</strong>. Among users who found a device, the rate reaching success increased from <strong>64.57%</strong> to <strong>77.97%</strong>.</li>
+              <li><strong>Interpretation:</strong> The post-launch pattern is consistent with a less interrupted path after device discovery; the before–after comparison alone does not establish causation.</li>
             </ul>
           </div>
           <div class="funnel-results" aria-label="Post-launch scan-to-success results">
@@ -162,14 +162,14 @@
 
         <section class="case-section reveal">
           <div class="closing-grid">
-            <div><p class="section-number">07 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul class="case-points"><li><strong>Completion</strong> Keep users in the connection journey until every detected device has completed connection, then take them to light controls.</li><li><strong>Recovery</strong> Add a factory-reset state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
+            <div><p class="section-number">07 · What I’d improve next</p><h2>Continue the journey through every detected device</h2><ul class="case-points"><li><strong>Completion:</strong> Keep users in the connection journey until every detected device has completed connection, then take them to light controls.</li><li><strong>Recovery:</strong> Add a factory-reset state for incompatible Hue lights, directing users to the official Philips Hue app when a reset is required.</li></ul></div>
             <aside class="future-note"><strong>Future proposal</strong><p>These directions are not shipped work or reported outcomes.</p></aside>
           </div>
         </section>
 
         <aside class="case-limitation case-limitation--standalone reveal">
           <strong>Limitation</strong>
-          <ul class="case-points"><li><strong>What I could not verify</strong> I did not have direct access to users, so the explanation for drop-off at <code>Connect</code> remains a funnel-informed hypothesis.</li><li><strong>Next validation</strong> Run usability sessions with representative users—or employees outside the SmartHue team if recruitment is not possible.</li></ul>
+          <ul class="case-points"><li><strong>What I could not verify:</strong> I did not have direct access to users, so the explanation for drop-off at <code>Connect</code> remains a funnel-informed hypothesis.</li><li><strong>Next validation:</strong> Run usability sessions with representative users—or employees outside the SmartHue team if recruitment is not possible.</li></ul>
         </aside>
       </article>
 
