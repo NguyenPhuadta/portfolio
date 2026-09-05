@@ -80,6 +80,19 @@
 .metric-placeholders .metric-card--primary strong { color: var(--color-neutral-50); }
 .metric-placeholders .metric-card--primary small { color: var(--color-primary-950); }
 .metric-decision { display: inline-block; width: fit-content; margin-top: 18px; padding: 6px 9px; border-radius: 999px; background: var(--color-primary-950); color: var(--color-neutral-50); font-size: 9px; font-style: normal; font-weight: 600; line-height: 1.2; text-transform: uppercase; }
+.ga4-action-chart { margin: 38px 0 0; overflow: hidden; border: 1px solid var(--color-neutral-700); border-radius: 22px; background: var(--color-neutral-900); color: var(--color-neutral-100); }
+.ga4-action-chart__plot { display: grid; gap: 14px; padding: 28px; }
+.ga4-action-chart__row { display: grid; grid-template-columns: 104px minmax(0,1fr) 58px; gap: 12px; align-items: center; }
+.ga4-action-chart__row > span { color: var(--color-neutral-300); font-size: 12px; }
+.ga4-action-chart__row > i { height: 8px; overflow: hidden; border-radius: 999px; background: var(--color-neutral-700); }
+.ga4-action-chart__row > i > b { display: block; width: var(--bar-width); height: 100%; border-radius: inherit; background: var(--color-neutral-400); }
+.ga4-action-chart__row > strong { color: var(--color-neutral-100); font-size: 12px; font-weight: 600; text-align: right; }
+.ga4-action-chart__row--highlight > span,.ga4-action-chart__row--highlight > strong { color: var(--color-primary-300); }
+.ga4-action-chart__row--highlight > i > b { background: var(--color-primary-500); }
+.ga4-action-chart figcaption { display: grid; gap: 5px; padding: 18px 20px 20px; border-top: 1px solid var(--color-neutral-700); background: var(--color-neutral-800); }
+.ga4-action-chart figcaption span { color: var(--color-primary-300); font-size: 9px; font-weight: 600; text-transform: uppercase; }
+.ga4-action-chart figcaption strong { font-size: 13px; font-weight: 600; }
+.ga4-action-chart figcaption p { margin: 0; color: var(--color-neutral-400); font-size: 11px; line-height: 1.45; }
 .ga4-test-result { margin: 38px 0 0; overflow: hidden; border: 1px solid var(--color-neutral-700); border-radius: 22px; background: var(--color-neutral-900); color: var(--color-neutral-100); }
 .ga4-test-result__table-wrap { overflow-x: auto; }
 .ga4-test-result table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
@@ -109,6 +122,8 @@
   .home-room-page .case-section { margin-bottom: 94px; }
   .home-room-page .case-section h2 { font-size: 31px; }
   .scope-list,.evidence-grid,.split-section,.correction-section,.metric-placeholders { grid-template-columns: 1fr; }
+  .ga4-action-chart__plot { padding: 22px 18px; }
+  .ga4-action-chart__row { grid-template-columns: 88px minmax(0,1fr) 54px; gap: 9px; }
   .ga4-test-result th,.ga4-test-result td { padding: 16px; }
   .split-section,.correction-section { gap: 32px; }
   .case-status { align-items: flex-start; border-radius: 16px; }

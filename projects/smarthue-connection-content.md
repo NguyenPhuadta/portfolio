@@ -1,5 +1,5 @@
 ---
-title: "Making SmartHue Connection Faster and More Reliable"
+title: "Removing Friction from SmartHue Connection"
 slug: "smarthue-automatic-connection"
 product: "SmartHue"
 case_type: "Product design case study"
@@ -44,7 +44,7 @@ The flow also includes clear recovery paths for no device found and connection t
 
 ### A/B test outcome
 
-In the A/B test, the auto-connect variant was compared with the baseline flow. The rate of users reaching the connection-success screen increased from 17% to 27%, a 55% relative change versus baseline. In-app purchase rate increased from 6.1% to 13%, a 118% relative change versus baseline. The team also reported reduced connection time.
+In the A/B test, the auto-connect variant was compared with the baseline flow. The experiment observed a connection-success-screen rate of 27% versus 17% for the baseline, a 55% relative difference. The observed in-app purchase rate was 13% versus 6.1%, a 118% relative difference.
 
 ### Post-launch funnel performance
 
@@ -80,7 +80,7 @@ SmartHue · Device connection
 
 ### Title
 
-Making SmartHue Connection Faster and More Reliable
+Removing Friction from SmartHue Connection
 
 ### Short description
 
@@ -88,7 +88,7 @@ Using GA4 to identify where users dropped after device discovery, then proposing
 
 ### A/B test outcome summary
 
-Compared with the baseline in an A/B test, the shipped auto-connect variant increased the connection-success-screen rate from 17% to 27% and in-app purchase rate from 6.1% to 13%. Connection time also decreased.
+Compared with the baseline in an A/B test, the shipped auto-connect variant showed a higher connection-success-screen rate (27% versus 17%) and in-app purchase rate (13% versus 6.1%).
 
 ### Post-launch funnel summary
 
@@ -174,7 +174,7 @@ The user still starts the journey by tapping `Scan Now`. Once a light is found, 
 
 By removing this manual decision, the new flow reduces friction between device discovery and a successful connection.
 
-For a user with one light or one Hue Bridge, the product can continue without asking them to make an unnecessary selection. This makes the journey more convenient and faster.
+For a user with one light or one Hue Bridge, the product can continue without asking them to make an unnecessary selection. This removes an unnecessary decision from the journey.
 
 When two, three or more lights are involved, SmartHue connects them sequentially. The first light detected is connected first, and the device model name is displayed so users can identify the light currently being connected. This removes repeated manual selection while keeping the process visible to the user.
 
@@ -230,16 +230,15 @@ This artifact confirms a device model name in the BLE connection state. It shows
 
 #### Heading
 
-A more successful, faster connection journey
+Higher observed success in the auto-connect variant
 
 #### Body copy
 
-In the A/B test, the auto-connect variant increased the connection-success-screen rate from 17% to 27% and in-app purchase rate from 6.1% to 13%, compared with the baseline. Connection time also decreased.
+In the A/B test, the auto-connect variant showed a higher connection-success-screen rate (27% versus 17%) and in-app purchase rate (13% versus 6.1%) than the baseline.
 
 #### Confirmed qualitative outcomes
 
-- Successful connections increased.
-- Connection time decreased.
+- The auto-connect variant showed a higher connection-success-screen rate than the baseline.
 
 ### Section 06 — Post-launch funnel performance
 
@@ -357,7 +356,7 @@ outcome-section
 - The user proposed removing that manual-selection step and moving to automatic connection.
 - The journey was unclear when a light could not be found.
 - After a device was found, users could be unsure where to tap next.
-- The journey contained friction and took a long time to complete.
+- The journey contained friction between device discovery and connection success.
 - The GA4 finding led to a discussion with Engineering about changing the connection journey.
 - The user starts the scan with `Scan Now`; after discovery, the resulting direction begins connection automatically.
 - The redesigned flow removes the point where users manually select a device.
@@ -367,8 +366,7 @@ outcome-section
 - The supplied Figma artifact confirms the Bridge flow: local-network permission, scan initiation, no-device recovery, physical Bridge-button instruction, timeout recovery and success.
 - The supplied Figma artifact confirms the BLE flow: method selection, scan initiation, automatic connection to `Hue color lamp`, no-light recovery, timeout recovery and success.
 - The failure cases followed technical states supplied by Engineering.
-- The automatic-connection experiment increased the rate of users reaching the connection-success screen by 55% and in-app purchase rate by 118%.
-- Connection time decreased.
+- In the automatic-connection A/B test, the variant showed a 55% higher connection-success-screen rate and a 118% higher in-app purchase rate relative to the baseline.
 - The post-launch funnels compare matching three-month windows before and after automatic connection was applied. BLE scan-to-success increased from 18.46% to 25.5%, and device-found-to-success increased from 42.94% to 46.57%. Bridge scan-to-success increased from 24.05% to 28.1%, and device-found-to-success increased from 64.57% to 77.97%.
 
 ## 6. Needs confirmation

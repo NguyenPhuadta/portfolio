@@ -20,7 +20,7 @@
     <main class="article-shell">
       <header class="article-header case-hero reveal">
         <p class="kicker">SmartHue · Engagement</p>
-        <h1>When a low-frequency feature serves high-retention users</h1>
+        <h1>Why a low-frequency feature still mattered to high-retention users</h1>
         <p class="dek">An A/B test combined Quick Mode with a less visible Room entry. The results showed why frequency alone was not enough to deprioritise Room.</p>
         <ul class="case-brief" aria-label="Case at a glance">
           <li><span>Role</span><strong>Product decision, UI flow &amp; handoff</strong></li>
@@ -33,20 +33,21 @@
       <article class="article-body case-body">
         <section class="case-section reveal">
           <p class="section-number">01 · The first signal</p>
-          <h2>Home was not prioritising everyday behaviour</h2>
+          <h2>Colour remained highly used despite deeper access</h2>
           <div class="copy-column">
-            <ul class="case-points"><li><strong>Behaviour signal:</strong> Changing colour was the most-used Home control, ahead of on/off and brightness.</li><li><strong>Feedback signal:</strong> App Store feedback requested changing the colour of several lights at once.</li><li><strong>Room context:</strong> Room was visible directly on Home but was created and opened less often.</li></ul>
+            <ul class="case-points"><li><strong>Accessible controls:</strong> On/off represented <strong>25.14%</strong> of recorded actions and brightness <strong>24.46%</strong>; both were exposed directly on Home and easy to reach.</li><li><strong>Deeper interaction:</strong> Colour change still represented <strong>20.11%</strong>, although users had to open individual lights to access it.</li><li><strong>Relative signal:</strong> Colour change exceeded Voice Control at <strong>18.21%</strong> and Automation at <strong>4.62%</strong>, even though both features were exposed in the main navigation.</li><li><strong>User request:</strong> Users asked for a way to change the colour of several lights at once.</li><li><strong>Room context:</strong> Room was visible directly on Home but was created and opened less often.</li></ul>
           </div>
-          <div class="evidence-grid">
-            <figure class="asset-placeholder required" role="img" aria-label="Original Home analytics comparing colour, on and off, and brightness controls.">
-              <div><strong>Content image placeholder</strong><span>Redacted GA4 breakdown of colour, on/off and brightness actions on the original Home.</span></div>
-              <figcaption><span>Source: GA4</span><strong>Original Home behaviour</strong><p>Colour adjustment was the most-used light-control action.</p></figcaption>
-            </figure>
-            <figure class="asset-placeholder optional" role="img" aria-label="App Store feedback requesting a way to change the colour of multiple lights at once.">
-              <div><strong>Content image placeholder</strong><span>Redacted App Store feedback about changing several lights’ colour together.</span></div>
-              <figcaption><span>Optional evidence · Pending</span><strong>App Store feedback</strong><p>Redacted feedback excerpt about changing several lights’ colour together.</p></figcaption>
-            </figure>
-          </div>
+          <figure class="ga4-action-chart" aria-labelledby="ga4-action-chart-caption">
+            <div class="ga4-action-chart__plot" role="img" aria-label="Original Home action distribution: on and off 25.14%, brightness 24.46%, colour change 20.11%, Voice Control 18.21%, Music 7.47%, and Automation 4.62%.">
+              <div class="ga4-action-chart__row"><span>On/off</span><i><b style="--bar-width:100%"></b></i><strong>25.14%</strong></div>
+              <div class="ga4-action-chart__row"><span>Brightness</span><i><b style="--bar-width:97.3%"></b></i><strong>24.46%</strong></div>
+              <div class="ga4-action-chart__row ga4-action-chart__row--highlight"><span>Colour</span><i><b style="--bar-width:80%"></b></i><strong>20.11%</strong></div>
+              <div class="ga4-action-chart__row"><span>Voice Control</span><i><b style="--bar-width:72.4%"></b></i><strong>18.21%</strong></div>
+              <div class="ga4-action-chart__row"><span>Music</span><i><b style="--bar-width:29.7%"></b></i><strong>7.47%</strong></div>
+              <div class="ga4-action-chart__row"><span>Automation</span><i><b style="--bar-width:18.4%"></b></i><strong>4.62%</strong></div>
+            </div>
+            <figcaption id="ga4-action-chart-caption"><span>Source: GA4</span><strong>Original Home action distribution</strong><p>Colour change reached <strong>20.11%</strong> despite deeper access, exceeding the visible Voice Control and Automation features.</p></figcaption>
+          </figure>
         </section>
 
         <section class="case-section reveal">
@@ -87,7 +88,7 @@
           <p class="section-number">03 · What the test revealed</p>
           <h2>The combined variant showed a trade-off</h2>
           <div class="copy-column">
-            <ul class="case-points"><li><strong>Quick Mode use:</strong> It accounted for <strong>64%</strong> of recorded Home actions during the one-month test.</li><li><strong>Variant result:</strong> D1 retention was <strong>9.6%</strong> versus <strong>12%</strong> in baseline; the Home-banner in-app purchase rate decreased by <strong>1.4 percentage points</strong> during the test.</li><li><strong>Room cohort:</strong> Room creators had higher W1 retention (<strong>19.4%</strong> vs <strong>9.4%</strong>) and returned to use every measured core Home control more often.</li><li><strong>Interpretation:</strong> The test combined Quick Mode and Room placement, so it did not isolate either change. Low Room frequency alone was not enough evidence to hide it.</li></ul>
+            <ul class="case-points"><li><strong>Quick Mode use:</strong> It accounted for <strong>64%</strong> of recorded Home actions during the one-month test.</li><li><strong>Variant result:</strong> D1 retention was <strong>9.6%</strong> versus <strong>12%</strong> in baseline; the Home-banner in-app purchase rate decreased by <strong>1.4 percentage points</strong> during the test.</li><li><strong>Room cohort:</strong> Before the test, users who created a Room had higher W1 retention (<strong>19.4%</strong> vs <strong>9.4%</strong>) and returned to use every measured core Home control more often. This is an association: Room creation may reflect pre-existing intent or engagement.</li><li><strong>Interpretation:</strong> The test combined Quick Mode and Room placement, so it did not isolate either change. Low Room frequency alone was not enough evidence to hide it.</li></ul>
           </div>
           <div class="metric-placeholders" aria-label="Key GA4 metrics">
             <div class="metric-card--primary"><span>Quick Mode usage</span><strong class="metric-value">64%</strong><small>Of recorded Home actions during the test</small></div>
@@ -125,23 +126,24 @@
         <section class="case-section correction-section reveal">
           <div>
             <p class="section-number">04 · The correction</p>
-            <h2>Restore Room before introducing Quick Mode</h2>
+            <h2>Restore Room in the immediate recovery release</h2>
             <ul class="case-points"><li><strong>Recovery release:</strong> Room returned to a visible position on Home; Quick Mode was deferred to a later release.</li><li><strong>Observed result:</strong> D1 retention returned to slightly above the <strong>12%</strong> baseline.</li><li><strong>Boundary:</strong> This supports keeping Room visible but does not prove that Room placement alone caused recovery.</li></ul>
           </div>
-          <figure class="asset-placeholder optional" role="img" aria-label="Recovery SmartHue Home screen with Room restored to the primary navigation and without Quick Mode."><div><strong>Content image placeholder</strong><span>Recovery Home: Room restored directly on Home; Quick Mode deferred.</span></div><figcaption>Recovery Home: Room restored. Quick Mode deferred.</figcaption></figure>
-        </section>
-
-        <section class="case-section reveal">
-          <figure class="asset-placeholder optional wide" role="img" aria-label="Retention trend after Room was restored in the recovery version while Quick Mode was deferred.">
-            <div><strong>Content image placeholder</strong><span>Redacted retention trend after Room was restored in the recovery version. Quick Mode was deferred.</span></div>
-            <figcaption><span>Optional analytics asset · Pending</span><strong>Recovery result</strong><p>D1 retention returned to slightly above the <strong>12%</strong> baseline after Room was restored. Exact values remain pending.</p></figcaption>
+          <figure class="final-home-figure">
+            <div class="final-home-figure__stage">
+              <div class="final-home-figure__screen">
+                <span>Recovery version</span>
+                <img src="./assets/smarthue/home-recovery.png" alt="SmartHue Home recovery screen with Room tabs visible directly on Home and no Quick Mode." />
+              </div>
+            </div>
+            <figcaption>Room restored directly on Home. Quick Mode deferred.</figcaption>
           </figure>
         </section>
 
         <section class="case-section closing-section reveal">
           <p class="section-number">05 · Closing</p>
           <h2>Frequency alone is not a prioritisation rule</h2>
-          <ul class="case-points"><li><strong>Use frequency:</strong> Quick Mode showed strong use within the test.</li><li><strong>Returning behaviour:</strong> Room creators returned to use every measured core Home control more often and showed higher W1 retention.</li><li><strong>Decision:</strong> Restore Room on Home and defer Quick Mode, rather than hide Room based on low frequency alone.</li></ul>
+          <ul class="case-points"><li><strong>Use frequency:</strong> Quick Mode showed strong use within the test.</li><li><strong>Returning behaviour:</strong> Before the test, Room creators returned to use every measured core Home control more often and showed higher W1 retention. These correlations may reflect pre-existing engagement.</li><li><strong>Decision:</strong> As a cautious recovery decision, restore Room on Home and defer Quick Mode rather than hide Room based on low frequency alone.</li></ul>
         </section>
       </article>
 
