@@ -117,7 +117,7 @@ const typeAvatarMessage = () => {
     }
 
     window.avatarSpeech.stop();
-    scheduleAvatarMessage(eraseAvatarMessage, 3500);
+    scheduleAvatarMessage(eraseAvatarMessage, 1500);
   };
 
   typeNextCharacter();
