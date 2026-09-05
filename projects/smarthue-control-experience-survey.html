@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../tokens.css?v=20260903-survey1" />
     <link rel="stylesheet" href="./project.css?v=20260903-survey1" />
-    <link rel="stylesheet" href="./smarthue-control-experience-survey.css?v=20260903-survey1" />
     <link rel="stylesheet" href="./case-standard.css?v=20260903-standard6" />
+    <link rel="stylesheet" href="./smarthue-control-experience-survey.css?v=20260905-refined" />
   </head>
   <body class="case-page survey-page">
     <div class="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
@@ -100,29 +100,25 @@
             <p>Users slide from Very Hard to Very Easy to rate their control experience. Ratings 4–5 enter the Happy path; ratings 1–3 enter the Not Happy path.</p>
             <p>Both diagnostic questions include <code>Other</code>, which opens a free-text field.</p>
           </div>
-          <div class="branch-summary">
-            <section><span>Ratings 4–5</span><h3>Happy path</h3><ul class="case-points"><li><strong>Diagnose:</strong> Which controls worked well for you?</li><li><strong>Look forward:</strong> What feature would you like us to add next?</li></ul></section>
-            <section><span>Ratings 1–3</span><h3>Not Happy path</h3><ul class="case-points"><li><strong>Diagnose:</strong> What was the biggest difficulty you had?</li><li><strong>Check the outcome:</strong> Were you eventually able to control your lights as intended?</li></ul></section>
-          </div>
           <figure class="survey-entry-screen">
             <div><img src="./assets/smarthue/survey-rating.png" alt="SmartHue survey screen asking users to slide from Very Hard to Very Easy to rate their control experience." /></div>
             <figcaption><span>Shared entry</span><strong>Rate the control experience</strong><p>The selected rating determines which diagnostic path follows.</p></figcaption>
           </figure>
           <div class="survey-branch-grid">
             <section class="survey-branch">
-              <header><span>Ratings 4–5</span><h3>Happy path</h3></header>
+              <header><span>Ratings 4–5</span><h3>Happy path</h3><p>Understand what works, then ask what users want next.</p></header>
               <div class="survey-screen-flow">
-                <figure><img src="./assets/smarthue/survey-happy-controls.png" alt="Survey screen asking which light controls worked well." /><figcaption>Identify positive drivers</figcaption></figure>
+                <figure><img src="./assets/smarthue/survey-happy-controls.png" alt="Survey screen asking which light controls worked well." /><figcaption><strong>01 · Positive drivers</strong>Which controls worked well for you?</figcaption></figure>
                 <i aria-hidden="true">→</i>
-                <figure><img src="./assets/smarthue/survey-happy-feature.png" alt="Survey screen asking which feature the user would like SmartHue to add next." /><figcaption>Capture feature demand</figcaption></figure>
+                <figure><img src="./assets/smarthue/survey-happy-feature.png" alt="Survey screen asking which feature the user would like SmartHue to add next." /><figcaption><strong>02 · Feature demand</strong>What feature would you like us to add next?</figcaption></figure>
               </div>
             </section>
             <section class="survey-branch">
-              <header><span>Ratings 1–3</span><h3>Not Happy path</h3></header>
+              <header><span>Ratings 1–3</span><h3>Not Happy path</h3><p>Locate the difficulty and check whether the user could complete the task.</p></header>
               <div class="survey-screen-flow">
-                <figure><img src="./assets/smarthue/survey-not-happy-difficulty.png" alt="Survey screen asking about the user's biggest difficulty when controlling lights." /><figcaption>Locate the difficulty</figcaption></figure>
+                <figure><img src="./assets/smarthue/survey-not-happy-difficulty.png" alt="Survey screen asking about the user's biggest difficulty when controlling lights." /><figcaption><strong>01 · Main difficulty</strong>What was the biggest difficulty you had?</figcaption></figure>
                 <i aria-hidden="true">→</i>
-                <figure><img src="./assets/smarthue/survey-not-happy-outcome.png" alt="Survey screen asking whether the user was eventually able to control their lights as intended." /><figcaption>Check the control outcome</figcaption></figure>
+                <figure><img src="./assets/smarthue/survey-not-happy-outcome.png" alt="Survey screen asking whether the user was eventually able to control their lights as intended." /><figcaption><strong>02 · Control outcome</strong>Were you eventually able to control your lights as intended?</figcaption></figure>
               </div>
             </section>
           </div>

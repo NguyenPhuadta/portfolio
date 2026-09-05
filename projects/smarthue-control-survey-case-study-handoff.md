@@ -221,6 +221,8 @@ The production release uses a measurable trigger tied to actual light-control us
 
 - Build the trigger sequence as accessible HTML text/steps; it is content, not an asset replacement.
 - Present the shared entry first, then the Happy and Not Happy paths as separate responsive cards.
+- Visual refinement: each branch occupies a full-width row with a short introduction and two readable screenshots; stack screens below 480px. Put the exact questions in each screen caption and omit the duplicate branch-summary cards.
+- Load the Survey stylesheet after the shared case stylesheet. Use neutral token backgrounds for screenshot panels, readable supporting labels, and a horizontal numbered trigger sequence that stacks on mobile.
 - Display code-like event names and formulas in a readable monospace style, without turning the metric list into a code-heavy section.
 - Do not include unsupported metric outcomes; this case defines the research and measurement design, not findings after launch.
 - GA4 is the data source for the figures in Section 2, but analytics screenshots must not be used publicly.
